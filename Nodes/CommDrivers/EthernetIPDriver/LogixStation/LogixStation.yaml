@@ -55,3 +55,74 @@ Children:
 - Name: Types
   Id: g=845cc305e73710b2b2d3cf8faba8beb2
   Type: BaseObjectType
+  Children:
+  - Name: Tank1
+    Id: g=64282acb79240b451940c7e7824c70ab
+    Supertype: TagStructure
+    Children:
+    - Name: ValveInStatus
+      Id: g=a34ecf0f240df8cab26418b9c502c3fc
+      Type: EthernetIPTag
+      DataType: Boolean
+      Value: false
+      Children:
+      - Name: SymbolName
+        Id: g=5d582f664b93adfba666feda81fca49a
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "ValveInStatus"
+    - Name: ValveInCmd
+      Id: g=426e25e0e8fd15d93d8a7256f0291d64
+      Type: EthernetIPTag
+      DataType: Boolean
+      Value: false
+      Children:
+      - Name: SymbolName
+        Id: g=4a7dd48c823855c188e4e1599f5a7325
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "ValveInCmd"
+    - Name: ValveOutStatus
+      Id: g=443c6730a9ec124d248fb55c09b0d84e
+      Type: EthernetIPTag
+      DataType: Boolean
+      Value: false
+      Children:
+      - Name: SymbolName
+        Id: g=664de0c693bd6f9e595bf2fa54165ac9
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "ValveOutStatus"
+    - Name: ValveOutCmd
+      Id: g=38928bd0710e1baa724784fb98737b43
+      Type: EthernetIPTag
+      DataType: Boolean
+      Value: false
+      Children:
+      - Name: SymbolName
+        Id: g=ef425de0b83a840a656c746c4d2acac8
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "ValveOutCmd"
+    - Name: Level
+      Id: g=3f9b649ef885b476e398ec79d5ced52a
+      Type: EthernetIPTag
+      DataType: Float
+      Value: 0.0
+      Children:
+      - Name: SymbolName
+        Id: g=3220ad6f0c0b6fb60ef0c76ca7e5f9f0
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Level"
+    - Name: SetPoint
+      Id: g=e075e5d33e37855478d225d97775e1a2
+      Type: EthernetIPTag
+      DataType: Float
+      Value: 0.0
+      Children:
+      - Name: SymbolName
+        Id: g=dd0ad3c71c34ae08e9b1d031292f464c
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "SetPoint"

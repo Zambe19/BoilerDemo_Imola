@@ -164,5 +164,17 @@ Project:
    Uri: 'urn:FTOptix:EthernetIP:Net'
    Module: FTOptix.EthernetIP.Net
    Version: 1.0
+  44:
+   Uri: 'c087f18c9c7e4a86ab04af8f9257f609#urn:DESKTOP-ET9DM06:UnifiedAutomation:UaDemoServerAnsiC'
+   ServerUri: c087f18c9c7e4a86ab04af8f9257f609
+  45:
+   Uri: 'c087f18c9c7e4a86ab04af8f9257f609#http://opcfoundation.org/UA/DI/'
+   ServerUri: c087f18c9c7e4a86ab04af8f9257f609
+  46:
+   Uri: 'c087f18c9c7e4a86ab04af8f9257f609#http://PLCopen.org/OpcUa/IEC61131-3/'
+   ServerUri: c087f18c9c7e4a86ab04af8f9257f609
+  47:
+   Uri: 'c087f18c9c7e4a86ab04af8f9257f609#http://www.unifiedautomation.com/DemoServer/'
+   ServerUri: c087f18c9c7e4a86ab04af8f9257f609
  Nodes:
  - File: Nodes/BoilerDemo_Imola.yaml
