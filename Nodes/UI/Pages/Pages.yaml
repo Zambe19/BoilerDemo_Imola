@@ -1427,35 +1427,35 @@ Children:
     Id: g=13ad714338fd3533658f2358e9a80614
     Type: Alias
     DataType: NodeId
-    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Value: {"IdType":1,"Id":"Demo.BoilerDemo.Boiler1","Namespace":47}
     Children:
     - Name: Kind
       Id: g=58d84b04dc868f98f238d22c6f953102
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Value: {"Id":1003,"Namespace":47}
   - Name: MainTank1Alias
     Id: g=9875342b272825a69f9b4be9099ddb00
     Type: Alias
     DataType: NodeId
-    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Value: {"IdType":2,"Id":"66453689142796407adf6eca4825d9cb","Namespace":43}
     Children:
     - Name: Kind
       Id: g=40cd26322389dc810adc2d49901bf7a9
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Value: {"IdType":2,"Id":"64282acb79240b451940c7e7824c70ab","Namespace":43}
   - Name: MainTank2Alias
     Id: g=bff6f27323ed0a4d7de4ac80e2a27cf3
     Type: Alias
     DataType: NodeId
-    Value: {"IdType":0,"Id":0,"Namespace":-1}
+    Value: {"IdType":2,"Id":"9f417182aec3f95f1d638225a6eacc67","Namespace":43}
     Children:
     - Name: Kind
       Id: g=c6158dc2040144a684956026d59390f6
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Value: {"IdType":2,"Id":"64282acb79240b451940c7e7824c70ab","Namespace":43}
   - Name: MainLogic
     Id: g=ff21370a6bb95ea39219764003cb1626
     Type: NetLogic
@@ -1471,6 +1471,5214 @@ Children:
     DataType: VerticalAlignment
     ModellingRule: Optional
     Value: 3
+  - Name: BoilerWidget1
+    Id: g=0136034c04f99f47a9a82f898a117f0e
+    Type: BoilerWidget
+    Children:
+    - Name: ItemName
+      Id: g=94a11679f0fb0b248580752359445dbc
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=8547df491826c7a52dd411966d2c32a6
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=efef313055eb7cb3940f9637ddad832a
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../BoilerName"
+    - Name: Boiler
+      Id: g=3114632d83eab05b93aee0cce3a835ea
+      Type: Boiler
+      Children:
+      - Name: LevelColor
+        Id: g=c7deaa7a640cbfafa7e43705b47442de
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00adee"
+      - Name: FillColor
+        Id: g=5792036ea47e7ada92645d8beacc5fa5
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#cccccc"
+      - Name: Level
+        Id: g=8a3a22a3321d958ed1d07c8ded4ec62e
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=71cef8048a9c658e562431f1b99e9149
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{BoilerAlias}/FillLevelSensor/FillLevel"
+      - Name: MinLevel
+        Id: g=03964a8b2102a0841b7092661bccc73c
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: MaxLevel
+        Id: g=a61ab06f57790840ed76179a8fdfc11f
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 100.0
+      - Name: Boiler_x5F_Outline
+        Id: g=60e91915b19a032447b8e7fabaf90ef6
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=5f0955507537ef5aa1f4435c94eb11c9
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Boiler_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=6d7c2898d60b79e9f1603943fd2a8319
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=bdc8bd311cc35ec9d6bf0c0f78694a0e
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Boiler_Fill.svg"
+        - Name: DynamicColor
+          Id: g=037e742e70083e9739dbf1d586bd4076
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#cccccc"
+          Children:
+          - Name: DynamicLink
+            Id: g=060229b3f16a764a4596eebb339299ae
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Boiler_bottlelevel
+        Id: g=a83476deba41ed245b016af25e7029ab
+        Type: LinearGauge
+        Children:
+        - Name: Value
+          Id: g=d4d66a05018a849c21d5a5db160ce414
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 70.0
+          Children:
+          - Name: DynamicLink
+            Id: g=8ef9e1072b40d6b9fc5c1806619d1e61
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Level"
+        - Name: MinValue
+          Id: g=94ab642dfea36f5953b2e95e0b5dacad
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 0.0
+          Children:
+          - Name: DynamicLink
+            Id: g=909f0f1e6d083b3c08de4ec213c3711d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MinLevel"
+        - Name: MaxValue
+          Id: g=04609631eb78cd4ffa210f1454b00427
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: DynamicLink
+            Id: g=7d3469adf7f2d3acbb35de98533b23b7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MaxLevel"
+        - Name: WarningZones
+          Id: g=070037cf7b01b10a32b0901e942b1e46
+          Type: BaseObjectType
+        - Name: FillColor
+          Id: g=5b8ebe8c6ba27f6538bb0dc61a35859c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00adee"
+          Children:
+          - Name: DynamicLink
+            Id: g=056164662829cfcd12ae227a49d97445
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../LevelColor"
+      - Name: Boiler_x5F_Overlay
+        Id: g=01f81d3373c1e2790384666357cbfc7e
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=ebb0a34bc7984a248b14f3ea78dc62c0
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Boiler_x5F_Overlay.svg"
+    - Name: Alarm_Medium_Priority1
+      Id: g=904046b6daa17325d806ab896d8b89ff
+      Type: Alarm_Medium_Priority
+      Children:
+      - Name: FillColor
+        Id: g=658a98459d6771318c9bda21a3429aaf
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#f5e119"
+      - Name: Icon_border
+        Id: g=294aa061f44db66115375316d0ffb534
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=9e8172446d30dda30ecdd120f7dac523
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Alarm_Medium_Priority_Icon_border.svg"
+        - Name: DynamicColor
+          Id: g=4913194d7a5229f5c24add95f69fe4c2
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#f5e119"
+          Children:
+          - Name: DynamicLink
+            Id: g=3b91edb97951747267a53e40be69d914
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Visible
+        Id: g=6149682a7908ac792793297dafd6a3e0
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=9078441cf81e5b487ce77766dc3ce198
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=6b0436a00a1cdaf5b107f4c36e8b1e8b
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=54b95215c844c8776389e11ca77bf709
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{BoilerAlias}/FillLevelSensor/FillLevel"
+    - Name: Level
+      Id: g=fe233ef9f78c80fa25ba593a55f6c17d
+      Type: StatusWidget
+      Children:
+      - Name: Title
+        Id: g=d99d382fc5b520b6e44eabcde841390f
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=aad5d361e7f90efbe400179e328f0c66
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":"Level"}
+          Children:
+          - Name: DynamicLink
+            Id: g=70dad6b1033161947d315578dbf5b022
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Name"
+      - Name: ValueActual
+        Id: g=df8b10ac3db32f42bedcd9167af8f631
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=284d5185f5f7a49afb7b4a3ba94a23e1
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: StringFormatter1
+            Id: g=6858cf600c7bc11e9e58fae8e1f98b96
+            Type: StringFormatter
+            Children:
+            - Name: Source0
+              Id: g=e87e5d168779bc56b6ba592e2969dcc5
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=033a4bb81f3435a17c81dc38f220c5cf
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=792c89795c5c341ea630c5d3b8c9208a
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=5ec1f99d25e1125cd76d59d3ca3c831c
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../MeasurementUnit"
+      - Name: Name
+        Id: g=6709a9e5d2ff0b017f87c964584d7fe3
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Level"
+      - Name: Actual
+        Id: g=bf47c5f980af62c4d2d83ce77a333813
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=daf327e1d7f005b0fcb398a47f9293a6
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{BoilerAlias}/FillLevelSensor/FillLevel"
+      - Name: Setpoint
+        Id: g=9e1a598e237b40827a136308eb750c8e
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=f3767334a3f709845559f9448fe0df0c
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{NodeId:ns=43;g=cf574850-9df5-8728-db93-be2a33b28bd3}"
+      - Name: MeasurementUnit
+        Id: g=cb8c9fce5e065b4eab4b269917cc205c
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "gal"
+      - Name: Set
+        Id: g=f1ef52f2e4abc7974164e655ac29d04c
+        Type: EditableLabel
+        Children:
+        - Name: Text
+          Id: g=d446ed6775bbf8d0b633f67d99a065a7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=eb7df6e9d9b27fc86fe832cbce797deb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Setpoint"
+        - Name: TextChanged
+          Id: g=c8359d671b19cd4135acebe617a2b368
+          Type: VariableChangedEventDispatcher
+          Children:
+          - Name: VariableNodePath
+            Id: g=05359e0c0479c504d1a735e1e1eedabb
+            Type: BaseVariableType
+            DataType: NodePath
+            Value: "../Text"
+          - Name: VariableValueChangedEventHandler1
+            Id: g=36d66a822232d7d25e44f3a611cabdd1
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Id: g=992a2c276387383c0269600ab5d13f6f
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"Id":42,"Namespace":14}
+            - Name: MethodsToCall
+              Id: g=a43e0a8618364d9ef51b4a3a6757796a
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Id: g=8971461a47df3a91493aa13990504b20
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=2bc5c2f4c66868d217ee9370d39cc4cf
+                  Type: NodePointer
+                  DataType: NodeId
+                  Value: {"Id":22,"Namespace":14}
+                  Children:
+                  - Name: Kind
+                    Id: g=e37ccf31d963c68c4b30b204f80c9a0a
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: {"Id":58}
+                - Name: Method
+                  Id: g=beee7ff0a02c3c97d92c3b4381cb8249
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "Set"
+                - Name: InputArguments
+                  Id: g=56bb3424342b7b1492518e06a8bf1242
+                  Type: BaseObjectType
+                  Children:
+                  - Name: VariableToModify
+                    Id: g=00850aeca18748c9640558f1f1c5a692
+                    Type: BaseDataVariableType
+                    DataType: VariablePointer
+                    Value: {"IdType":0,"Id":0,"Namespace":-1}
+                  - Name: Value
+                    Id: g=f3d2f53741a079cd816620c64dbec942
+                    Type: BaseDataVariableType
+                    DataType: BaseDataType
+                  - Name: ArrayIndex
+                    Id: g=b8b7cd98998c7956e8d4d9e119205b26
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    ValueRank: ScalarOrOneDimension
+                    Value: 0
+            - Name: EventArguments
+              Id: g=2be98d687b26955f883b6b23afe640b0
+              Type: VariableValueChangedEvent
+              Children:
+              - Name: VariableNodeId
+                Id: g=c44754feca0e38f80365bb367973db72
+                Type: BaseVariableType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: NewValue
+                Id: g=4ee4d7ba73bd0651b880a0fe058c2dc1
+                Type: BaseVariableType
+                DataType: BaseDataType
+              - Name: OldValue
+                Id: g=161bba223bd0a08308b7e974ea70675a
+                Type: BaseVariableType
+                DataType: BaseDataType
+              - Name: EventId
+                Id: g=ab7d615f8f365f54198f04b3396d5b78
+                Type: PropertyType
+                DataType: ByteString
+                Value: ""
+              - Name: EventType
+                Id: g=9854972d28b72309d50a165d92a44f4d
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: SourceNode
+                Id: g=65e7c4583ba6dfb4890c553bf3c16265
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: SourceName
+                Id: g=c208ff26ae7edf2a6810e724076d413d
+                Type: PropertyType
+                DataType: String
+                Value: ""
+              - Name: Time
+                Id: g=ff8765cfc98716a7139d288b4f43fe2e
+                Type: PropertyType
+                DataType: UtcTime
+                Value: "1601-01-01T00:00:00.0000000"
+              - Name: ReceiveTime
+                Id: g=fce3384e38a53ee3abf78ef7ad391145
+                Type: PropertyType
+                DataType: UtcTime
+                Value: "1601-01-01T00:00:00.0000000"
+              - Name: Message
+                Id: g=fada039c15fc766e5337887c0f4a6021
+                Type: PropertyType
+                DataType: LocalizedText
+                Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+              - Name: Severity
+                Id: g=6c694d4d2424a088d5f60bf62dfb60e4
+                Type: PropertyType
+                DataType: UInt16
+                Value: 0
+      - Name: Unit
+        Id: g=c0006ff9431bcdb306b6cb4672969f00
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=4ac751c1015e69d7eb9337c23b682c9b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=d959c0193bde7ca8d89b65910a0c7851
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MeasurementUnit"
+      - Name: Arrow
+        Id: g=4e90f64fb3021672c6a2caaaa0664224
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=a254ececcf42992b469795b59a015dd1
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Setpoint.svg"
+      - Name: ExecuteMethod
+        Id: g=3b614b703fa57705ffb003347328f37c
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Id: g=31f1d73b1921be53b01704769e789493
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Id: g=99a39bbfda26af62e7615e492175a1cb
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"Id":16,"Namespace":16}
+          - Name: MethodsToCall
+            Id: g=ccc78c4642d9735a71e338e2f7df05be
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer1
+              Id: g=cf3d2c3669783426e364490b2500f425
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Id: g=b6f4b54e8dbef6bf35aeeebfb722a2f5
+                Type: NodePointer
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: Kind
+                  Id: g=6effbf0dc2ed93de8f7e44fa16235cdc
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: {"Id":58}
+                - Name: DynamicLink
+                  Id: g=12a44aaed3c1b41af7cc3a583828b499
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{MainBoilerAlias}@NodeId"
+              - Name: Method
+                Id: g=cf26f19600f3fd1590f2c154a28b6937
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "Fill"
+              - Name: InputArguments
+                Id: g=8ba76ca696a42fd95b1643746f46c28a
+                Type: BaseObjectType
+                Children:
+                - Name: SetPoint
+                  Id: g=104f4c54afe0c4977e3ecbcd083e1a77
+                  Type: BaseDataVariableType
+                  DataType: Double
+                  Value: 0.0
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=8a234602dfa88e9af114cc7d35f049ae
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{NodeId:ns=43;g=cf574850-9df5-8728-db93-be2a33b28bd3}"
+          - Name: EventArguments
+            Id: g=9d0edde201e3ea180c467fe5a4fa2cd9
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Id: g=5a33f4330cf459db7631214eb28299cd
+              Type: PropertyType
+              DataType: ByteString
+              Value: ""
+            - Name: EventType
+              Id: g=419f92ee15d98bb74c5b5510ad7e6bac
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+            - Name: SourceNode
+              Id: g=f9c834104724ae2835591105715d8452
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+            - Name: SourceName
+              Id: g=42e97f4be171584d4cc838ca29767d1c
+              Type: PropertyType
+              DataType: String
+              Value: ""
+            - Name: Time
+              Id: g=a4dcee7cd1204754daeac36c0717a7d1
+              Type: PropertyType
+              DataType: UtcTime
+              Value: "1601-01-01T00:00:00.0000000"
+            - Name: ReceiveTime
+              Id: g=9020d26ca297d076fb01becbdc7822d1
+              Type: PropertyType
+              DataType: UtcTime
+              Value: "1601-01-01T00:00:00.0000000"
+            - Name: Message
+              Id: g=fc7f4f694d94f0cdb12936687bd7d0db
+              Type: PropertyType
+              DataType: LocalizedText
+              Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+            - Name: Severity
+              Id: g=a67b299eae77f13c57452db347400b70
+              Type: PropertyType
+              DataType: UInt16
+              Value: 0
+        - Name: ImagePath
+          Id: g=1177658c0eb18cb99a072e6123d5cfe0
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/SetpointGray.svg"
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=92914f9e9fac8effa66a8460d2b929e4
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=8db1cc17279551c4251f3ec42ea6df8e
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=23e305d0e0f9cf94135074fd69712cc2
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=288a633bf1feb7ef5802d4304966a085
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=32c71a2692981e2dab9f78fd8ea5301d
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Actual"
+                - Name: Source1
+                  Id: g=8447b2f982aa4e39f2364fad97b032f4
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=a8549e144499cc9598b5bd15369febf7
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Setpoint"
+        - Name: Appearance
+          Id: g=64e773f0d01ff742ed511de509e073ea
+          Type: BaseVariableType
+          DataType: String
+          Value: ""
+        - Name: Visible
+          Id: g=fb2bbf21c7a8e10e5c37a85ae9497cac
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=4c47f429e748a8dca5ddaf3868d2c338
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=df22a68b90df176f2d2a4f5a9d11e08c
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=35d5ef6e06e012b5355f2d9c3734d216
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=d43da9ea10786a67d1953fd470915461
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=514359b37132c8bb49dcfd111d9aa1d9
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Setpoint"
+    - Name: Temperature
+      Id: g=c1c1e1e9f3cd3db4879862293ba36795
+      Type: StatusWidget
+      Children:
+      - Name: Title
+        Id: g=bfdfd958f6ad724b4a600e48f9c849ec
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=79c135f80ad8075d91c60b9f6d3134db
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":"Temperature"}
+          Children:
+          - Name: DynamicLink
+            Id: g=8422d6e353d872d43bfc75f111e04386
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Name"
+      - Name: ValueActual
+        Id: g=38a425375409b4268df880b1ffb0c372
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=04453cb9fc81b40c95864397aecbf520
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: StringFormatter1
+            Id: g=eadb774cadeaaf28e6c18b573cf8d030
+            Type: StringFormatter
+            Children:
+            - Name: Source0
+              Id: g=2054a2530569a3a5778c7b91f7b61e6d
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=fee91ddc28edd8988d500a697d4a6131
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=7c2ca0348a294476fc6493d33b4c494e
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=e8a272381ada5c761b35f85fba3f5399
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../MeasurementUnit"
+      - Name: Name
+        Id: g=b257188bcc064d817bcbf5607334cbce
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Temperature"
+      - Name: Actual
+        Id: g=b980eb03e2de31f4e7d59e7e6a641611
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=df265bd40d6e7c74a44acf2418ad87d1
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{BoilerAlias}/TemperatureSensor/Temperature"
+      - Name: Setpoint
+        Id: g=9e93e2eabdf80dd6b2f99a00ea4b602d
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=199979d24f4c0582d51341e081ffaa6b
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{NodeId:ns=43;g=2d2c36fd-6206-438a-b7cd-4b59ef9d6941}"
+      - Name: MeasurementUnit
+        Id: g=03d7e0da7c69263c586b5538ae6cc067
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "°F"
+      - Name: HotSurfaceSymbol1
+        Id: g=cd6437f9999d8369eb36931cb45f9c80
+        Type: HotSurfaceSymbol2
+        Children:
+        - Name: FillColor
+          Id: g=3fa28b3995f55443fa30faf2ae31ef91
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#fe6703eb"
+        - Name: fill
+          Id: g=c94e923b0cf3ee0fed31034af0e4d1be
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=63f16681435f9f54a751542384d23097
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/HotSurfaceSymbol2_fill.svg"
+          - Name: DynamicColor
+            Id: g=b73a4c393636362a86e1d0a1fe1edff8
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#d1d3d4"
+            Children:
+            - Name: DynamicLink
+              Id: g=b4c0afd3a813fa7c0f9f560a49ad39c4
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../FillColor"
+        - Name: Visible
+          Id: g=7c46e84cbc0e778417d43ad68c8b0a43
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=c2f61bfc0c998cb12138b3762f88fb84
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=d36651d338b9ffee77295daeaec2b986
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=94fee07e2fc8ea2f472b604afa2a24aa
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=a75d8d283a1d17cfb3ca9cb8b3165343
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=15a0d750663f542ebc2972c639910e2a
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Actual"
+                - Name: Source1
+                  Id: g=f88956445e1762505d52c2707a0736e2
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=e40048f99dea54375255b878e2e9519a
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Setpoint"
+      - Name: LowTemperatureSymbol1
+        Id: g=146f1dea5195b10fff914028fe33c890
+        Type: LowTemperatureSymbol
+        Children:
+        - Name: FillColor
+          Id: g=eb628471873158a52c07009746940930
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00adee"
+        - Name: Fill
+          Id: g=29391d5018f1753d1df906077bc6a199
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=63971d422218653b6098f9936fb07dce
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/LowTemperatureSymbol_Fill.svg"
+          - Name: DynamicColor
+            Id: g=cd545073818f6697b162e6878064e187
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#d1d3d4"
+            Children:
+            - Name: DynamicLink
+              Id: g=fe7609e3f453224f66dddfc2b8a61dd0
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../FillColor"
+        - Name: Visible
+          Id: g=624c50bfe680cc3494db2fd14cd6880f
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=fa01befbf43523dcb853a24d1d4ce11d
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=716433e4b805bc9901fd9634956b530f
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=a37d83f37b66dd71e081af90ba9884bf
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=abd092faa18c58cdc249587f023f15b1
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=00e3f08a4084093e9613867ea938070a
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Actual"
+                - Name: Source1
+                  Id: g=c564f535364faa4a027bc6300bcb1a7d
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=80e3adc244d58414beaa6af1c5869a7d
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Setpoint"
+      - Name: Set
+        Id: g=5ffdb41266720a0a2c23928f152ef8bd
+        Type: EditableLabel
+        Children:
+        - Name: Text
+          Id: g=0c9dd94c421b2d227b5ba4f2fa34c862
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=6e51f9e4c86aee2259d90ee5d8c28c74
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Setpoint"
+        - Name: TextChanged
+          Id: g=c012aaff9e53cbc72c41a03548308a46
+          Type: VariableChangedEventDispatcher
+          Children:
+          - Name: VariableNodePath
+            Id: g=a1d6a97acc52a787b819909b6796b910
+            Type: BaseVariableType
+            DataType: NodePath
+            Value: "../Text"
+          - Name: VariableValueChangedEventHandler1
+            Id: g=5a398c21eb12ae0b2669d5a2f70b28be
+            Type: EventHandler
+            Children:
+            - Name: ListenEventType
+              Id: g=51634ca9c8e537542cc109c0deff84d7
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"Id":42,"Namespace":14}
+            - Name: MethodsToCall
+              Id: g=6e23deed65b44851aaf14496f940d847
+              Type: BaseObjectType
+              Children:
+              - Name: MethodContainer1
+                Id: g=a26967edba1ecafa64133a44e664c6db
+                Type: BaseObjectType
+                Children:
+                - Name: ObjectPointer
+                  Id: g=73230516f0e1ef33b4fc951c44bdd932
+                  Type: NodePointer
+                  DataType: NodeId
+                  Value: {"Id":22,"Namespace":14}
+                  Children:
+                  - Name: Kind
+                    Id: g=08457ae45e86a1bc94e6ff37bf41733e
+                    Type: PropertyType
+                    DataType: NodeId
+                    Value: {"Id":58}
+                - Name: Method
+                  Id: g=460bf0db4bfb7f71d042890d71808e0d
+                  Type: BaseDataVariableType
+                  DataType: String
+                  Value: "Set"
+                - Name: InputArguments
+                  Id: g=460e2b52bfba306e8c23ff10f1d6effe
+                  Type: BaseObjectType
+                  Children:
+                  - Name: VariableToModify
+                    Id: g=178bcfdf72b385fc455a8d814cdc3e07
+                    Type: BaseDataVariableType
+                    DataType: VariablePointer
+                    Value: {"IdType":0,"Id":0,"Namespace":-1}
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=0e483a06adea2d448d2ebd91620aaa45
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "../../../../../../../ExecuteMethod/Appearance@NodeId"
+                  - Name: Value
+                    Id: g=cf553debbe7d3a3cde7a1d414cb42a51
+                    Type: BaseDataVariableType
+                    DataType: String
+                    Value: ""
+                  - Name: ArrayIndex
+                    Id: g=e54ed5f1b030df2bc90b31cdba033ab7
+                    Type: BaseDataVariableType
+                    DataType: UInt32
+                    ValueRank: ScalarOrOneDimension
+                    Value: 0
+            - Name: EventArguments
+              Id: g=16916c2f867582fcb67a47448bb686b5
+              Type: VariableValueChangedEvent
+              Children:
+              - Name: VariableNodeId
+                Id: g=28987c1e00096673ba74b82458745b0f
+                Type: BaseVariableType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: NewValue
+                Id: g=4d704ff4db2686814bf5a1587bea1519
+                Type: BaseVariableType
+                DataType: BaseDataType
+              - Name: OldValue
+                Id: g=08d2e45844ed1785f08f9e67e74df29d
+                Type: BaseVariableType
+                DataType: BaseDataType
+              - Name: EventId
+                Id: g=70f46985f10a30d768e3d725ebd87e8a
+                Type: PropertyType
+                DataType: ByteString
+                Value: ""
+              - Name: EventType
+                Id: g=8428e08e825c929d5dd89b035684d8cc
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: SourceNode
+                Id: g=2922c989134c9ac3121d6092dee961e8
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+              - Name: SourceName
+                Id: g=2e2dfeb9381a2dd18da2fe339a0a6287
+                Type: PropertyType
+                DataType: String
+                Value: ""
+              - Name: Time
+                Id: g=a72376bf0acedb1a58d2f554e931cb31
+                Type: PropertyType
+                DataType: UtcTime
+                Value: "1601-01-01T00:00:00.0000000"
+              - Name: ReceiveTime
+                Id: g=a034c962219b14be5495189d882d236a
+                Type: PropertyType
+                DataType: UtcTime
+                Value: "1601-01-01T00:00:00.0000000"
+              - Name: Message
+                Id: g=68a65a3ad21d99a1b1e5c60af137c6c0
+                Type: PropertyType
+                DataType: LocalizedText
+                Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+              - Name: Severity
+                Id: g=52432fc1124cabea8c6100ffbf2bc6ce
+                Type: PropertyType
+                DataType: UInt16
+                Value: 0
+      - Name: Unit
+        Id: g=07df543753d8d78e732298be3b6a48fa
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=986a38c32ccac756699b53aaddc5edc0
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=1f0cc109374bd16951153eca81208d0e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MeasurementUnit"
+      - Name: Arrow
+        Id: g=008efa3a17ee08f62e63eb4cbd960198
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=9b90630c4e28d58f918a3e746b98deea
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Setpoint.svg"
+      - Name: ExecuteMethod
+        Id: g=5af6a209209ae44e1a67443a88b29ce4
+        Type: Button
+        Children:
+        - Name: MouseClickEventHandler1
+          Id: g=0cd93dd972e21a8c46c8dd02d1b52999
+          Type: EventHandler
+          Children:
+          - Name: ListenEventType
+            Id: g=e8801d44a8e3945540232b936c7c177f
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"Id":16,"Namespace":16}
+          - Name: MethodsToCall
+            Id: g=65578e809694bf70263a0823f67d4789
+            Type: BaseObjectType
+            Children:
+            - Name: MethodContainer1
+              Id: g=e3fb7c3af7ba447317a2b33cbb5722f4
+              Type: BaseObjectType
+              Children:
+              - Name: ObjectPointer
+                Id: g=3ff066ad114bcc743e396889a92cf001
+                Type: NodePointer
+                DataType: NodeId
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: Kind
+                  Id: g=2e16617648bce4e4d44c8d43a6651911
+                  Type: PropertyType
+                  DataType: NodeId
+                  Value: {"Id":58}
+                - Name: DynamicLink
+                  Id: g=0fd917e8d3d9689cd35cc982e77ad13c
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{BoilerAlias}@NodeId"
+              - Name: Method
+                Id: g=7cf9a2398271f1f9f09ee93bbde97235
+                Type: BaseDataVariableType
+                DataType: String
+                Value: "Heat"
+              - Name: InputArguments
+                Id: g=ccb9db7fd69554acd9c090a54c3ca52e
+                Type: BaseObjectType
+                Children:
+                - Name: SetPoint
+                  Id: g=790c925b4dcc863e0a14ddbbf8df224f
+                  Type: BaseDataVariableType
+                  DataType: Double
+                  Value: 0.0
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=8859b02f518d518bd50fe338eb4252b0
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "{NodeId:ns=43;g=2d2c36fd-6206-438a-b7cd-4b59ef9d6941}"
+          - Name: EventArguments
+            Id: g=97f38c1faf52f2507312a4976f6c3e0b
+            Type: MouseClickEvent
+            Children:
+            - Name: EventId
+              Id: g=23bd4a29a9309bc50ba284bd94a43503
+              Type: PropertyType
+              DataType: ByteString
+              Value: ""
+            - Name: EventType
+              Id: g=604dc517660e7824d2b88000804fe54c
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+            - Name: SourceNode
+              Id: g=ca87141c5c7c7ca6d1f237a039043369
+              Type: PropertyType
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+            - Name: SourceName
+              Id: g=62c6ac2fdd7459317994449e235eac7a
+              Type: PropertyType
+              DataType: String
+              Value: ""
+            - Name: Time
+              Id: g=4e20c4c07877ff4512bde563d6884f07
+              Type: PropertyType
+              DataType: UtcTime
+              Value: "1601-01-01T00:00:00.0000000"
+            - Name: ReceiveTime
+              Id: g=1997ae829f59eab0e2f6fa5c40f02d87
+              Type: PropertyType
+              DataType: UtcTime
+              Value: "1601-01-01T00:00:00.0000000"
+            - Name: Message
+              Id: g=68153570a0a43b743a61daa838b0b0fd
+              Type: PropertyType
+              DataType: LocalizedText
+              Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+            - Name: Severity
+              Id: g=88596c5db2daa2fc63896867d711126d
+              Type: PropertyType
+              DataType: UInt16
+              Value: 0
+        - Name: ImagePath
+          Id: g=c90c5529dac93ede5a5a736fd2a02fd3
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/SetpointGray.svg"
+          Children:
+          - Name: KeyValueConverter1
+            Id: g=f89b5abb7bb89c22c75b8a053f9ab43c
+            Type: ValueMapConverter
+            Children:
+            - Name: Source
+              Id: g=9732121bce36fb7992c86d16774680b3
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=5ec74b634e035f4db10e5e602946d838
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=44b94b96653208d0cd74511b5f96efa7
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=2e0cc93d13f58e87558bdcc0721c6784
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Actual"
+                - Name: Source1
+                  Id: g=b06317004bd14331c67700f5275c2877
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=a44df7561c85801ab83cbb380bdf51e7
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../Setpoint"
+        - Name: Visible
+          Id: g=2dac68bf21aaeb281c7a2a108deaa19f
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=f74fd3f28386b53ec1479ff055950d9f
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=3977d0f0dfce40ed2317f2a89f03c407
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=7d790cbc6cdc1ab54de0149c9d07b15a
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=0fa68cfa4c8e3ee6e04e0b718651ef42
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=f1dc34a4ddb2e87bc3afccb8e3294ff3
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Setpoint"
+    - Name: BoilerAlias
+      Id: g=18b88deb2920edad4a61f8e68fc5376f
+      Type: Alias
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Children:
+      - Name: Kind
+        Id: g=5a195d3857c54444cd03be3300d8110d
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+      - Name: DynamicLink
+        Id: g=377e831f70c8cbc03cb8d84f18dbf7b4
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{MainBoilerAlias}@NodeId"
+        Children:
+        - Name: Mode
+          Id: g=094815be075e92bdaf273a7e715a1c69
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: BoilerName
+      Id: g=41282cfce48c3dbc5bb5175e619820d2
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "B2003"
+    - Name: Fill
+      Id: g=81bdf04477d5c3a1ce8313d0a867fa83
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=35b4bb89ce0b2da548ca56fdfd346b9c
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=2f88768324fd5184e779f21f00860b92
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=9c9819cb58fcb9426f5b7f1533512f6f
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=b6b2ff459137ab159e5d1c35102dfcb9
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=3eef0a7ebae1fdb774ca6b8dc0e45799
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Id: g=5447be31b2a6ccd9548e21ac01eae8c5
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+              - Name: DynamicLink
+                Id: g=ba9b834f5179e336a7e55ef7bf65e163
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{MainBoilerAlias}@NodeId"
+            - Name: Method
+              Id: g=0789cec262fe49a1c81d2ba3a08d7e41
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Fill"
+            - Name: InputArguments
+              Id: g=275d1123ab733f5f4b5ab4498aa950c0
+              Type: BaseObjectType
+              Children:
+              - Name: SetPoint
+                Id: g=a0ce1280d303f3e1e6a94f09b8a67614
+                Type: BaseDataVariableType
+                DataType: Double
+                Value: 100.0
+        - Name: EventArguments
+          Id: g=01dedbe3d2b6900cfcf5a44935308d53
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=49db5cd6456a338735969946e3d846db
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=e398a7034c8a4434b109710a718ea80f
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=f32e1a479b024d30076b7db28157490f
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=2477f2bb280695bb2d1084c302c46217
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=9cd8cffc406b469d5bdb0fe02371e05a
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=84922f3dbeb1c12a33c96ebc3539b789
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=31f4b80f0418513463dc5374a47c294b
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=a2f9e947ba3662cecdac1a5ac0b58767
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+    - Name: Heat
+      Id: g=759a110d1a7089da3576be0eb3c1a7a9
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=1f6ad2964cad1298f0a45578fd0b54a6
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=2e521898c5caca8e7ff685a4df208d4e
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=891b88eb5e133c24d2c0f09ece5af2ce
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=c7ee10250cda62300d0fcdd78d6a5e4e
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=f67969bd54c3d60bb480f200236805cc
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Id: g=d9c00e6f83ff626bc701832e3f333feb
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+              - Name: DynamicLink
+                Id: g=494e2a8264210199048b1c0fc8f0d967
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{MainBoilerAlias}@NodeId"
+            - Name: Method
+              Id: g=0046e29728a89dafc8c593d0845e13a2
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Heat"
+            - Name: InputArguments
+              Id: g=2df71c284e7a405a9901d00b34e07ca3
+              Type: BaseObjectType
+              Children:
+              - Name: SetPoint
+                Id: g=921b15b8a9f21a417dccd08d901f69a2
+                Type: BaseDataVariableType
+                DataType: Double
+                Value: 90.0
+        - Name: EventArguments
+          Id: g=222c349b90b98f557f9d705295b78a86
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=02836b4c8df7b5e43bf67d942a95f9cc
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=b47788db4d97650021686b499271d7f7
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=2df1d9e83eaf134b287dc303c135c7b2
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=38fe99a0b1817564313c2bb119e74fe4
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=b1db6bc55b1c9d5c1f81d38e0f94f4dd
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=28765d293ccf3728b4016b779ab8bd29
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=7aa78062c3bdcd2e0adcf984ec2ee345
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=2e47588186f208af491a94da52a63308
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+    - Name: Chill
+      Id: g=abc079f10bad2f7f773c5be004b28def
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=18da4a93aaaf78db3d7d82c4bd44ab73
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=d1b6c5ea93e9fe27e90caf9dcd4a061e
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=3d5c6147a122e106be78f1fdbc2eaa60
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=09a3eea6223c1c39881a1ae90a2b8d28
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=2c7cb554a6c147fca0e34646ce29ea9f
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Id: g=b16d20cf7f6a7cf0719fee9f5b3178e1
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+              - Name: DynamicLink
+                Id: g=453de5c569a783bce9d3ea027bdd08ba
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{MainBoilerAlias}@NodeId"
+            - Name: Method
+              Id: g=1ee7cb03ee980aa6a035981afe0937f3
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Heat"
+            - Name: InputArguments
+              Id: g=2828adf141104f8cccad3a0801dec02a
+              Type: BaseObjectType
+              Children:
+              - Name: SetPoint
+                Id: g=6e5dea490382b6ce270d839c17276288
+                Type: BaseDataVariableType
+                DataType: Double
+                Value: 30.0
+        - Name: EventArguments
+          Id: g=5a6ae350ca36c829c11a3f1edba18c23
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=de2b183b78099408bd251b2f026c4d22
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=85c361fbc0dbc37597f7819f747135e9
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=4f299c8521e65672a0c58b9ebf69924a
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=0b96f6edf80ba89d944faa96ebcfa541
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=407cfbff5c86e673fe15f2a7689f1695
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=d9a4f67a4db076ade033cd3842316144
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=dbb69e9d04da3c2ea1513da96cc44d04
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=e1985f3419ca4f68908e45cdc5d440e3
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+    - Name: LeftMargin
+      Id: g=06d72fe3fc488ca9513770285e6f0286
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 50.0
+    - Name: TopMargin
+      Id: g=9b7c7f6bf78ac72bd459b3b67156dc72
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 180.0
+  - Name: TankWidget1
+    Id: g=6173321b99d76e5a6a443b64f518e638
+    Type: TankWidget
+    Children:
+    - Name: InletPipe
+      Id: g=31005d952a0070f40bef76e01bc13a7d
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=34c92726e05405a71992eb67f64c50af
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=d1ed197fb43df90e03272dec9658680a
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=60211faf3f392a420fce224b5c8035f5
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=76b9c0cf8359c312a3f288fb1e2fa0c9
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=722b718acb53fe5b72e327cbd8bd3e20
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=b34acec809b476937eb2d56b80c6eb48
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=a96ed141012e1a467f0e7cc8c795813c
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveInStatus"
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=ee893495726d5b6e41f1d02d1d9ecb71
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=aac5cbe0407741f817252c8d6586d0dd
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=c4e66b6bce29b5cea15b0cf539598ebb
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=49435fe84c7b21ac97115d27c3718d22
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=69f300d20f5af0bf771f47ab9b6b242d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=547901eddb856f3cb3f7578cfc8441fc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=f5cd07ef6dd81d53a5f7e3413ef39615
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=68c3b795358a61d1f57360c23428fa78
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=8de7f55d3830d2a5daf8c99094c3126f
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=727ca5a1acdabf1d562abde9eaa38fd4
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=4610f48a2beebf76498358e29ec9dee3
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=30df76c46ccbcfb2d5573a64523d6750
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=f056503563df750f32c0dbfd4d5751d9
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=a3a36b9c9fe8095179a7988315679f91
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=01c8d1fada333b9d67c9ca3e4adf4116
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=9436ed73989474ee851d2cbee2ae87c6
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=ffedc866f73615b465b6bb22b4f79abe
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=500fdbf27a50f205dbf30f8e598d3b98
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=9e5c339c88ede970cba32d804571b37c
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=0c89ea1f995b6c40db34056f0da37078
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=9805d68d0c5cdb852160ee8b2a554a0a
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: InletValve
+      Id: g=a160e6253a44f496d5efff7c5cb20c4d
+      Type: ValveSolenoid
+      Children:
+      - Name: FillColor
+        Id: g=8ae5fa2951b24eb53998b6e3f34729cb
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#4d4d4d"
+      - Name: BodyColor
+        Id: g=cda8ed6c23ca8bf1dcffb2a79a641e39
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#cccccc"
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=1b2881ba47858bd84f547ce2067403d1
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=635bcd32cd06ce3af8e7fefe70a2aaf0
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=772355b9f58bd6a32df8b3dca56a13c1
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/ValveInStatus"
+      - Name: Solenoid_x5F_Valve_x5F_Outline
+        Id: g=03349972b4d96e9f1f8b71c863d654b0
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=022092ce39b34f31a9fa37d788adfe44
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Outline.svg"
+      - Name: Body
+        Id: g=964cf46e2c9caaea1045ba98de56e553
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=bc721fe59fa276c190308f4193c342b2
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Body.svg"
+        - Name: DynamicColor
+          Id: g=a1bc3c79a895b82e3d4a3688abb34a5c
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#cccccc"
+          Children:
+          - Name: DynamicLink
+            Id: g=4c8fcc371de7af33c67179b6bf2e9bc3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../BodyColor"
+      - Name: Fill
+        Id: g=97cb15a5bdd81c3044becff54856bbe9
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=d10a3c71d52abdf90afedefdad0dda89
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Fill.svg"
+        - Name: DynamicColor
+          Id: g=22da467e854a0092a64f83216f1513d3
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#4d4d4d"
+          Children:
+          - Name: DynamicLink
+            Id: g=23cfd4309bda508647ea8b46fb3fae04
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Solenoid_x5F_Valve_x5F_Overlay
+        Id: g=6dec219aa0886f1d0c3030a2d2184641
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=df5910c02294df8cc89b61f1b83ec5df
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Overlay.svg"
+      - Name: Enabled
+        Id: g=bb0b4bc8a9a8e26683f6c54979a8ab28
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=838df5e2ef6ae1e5e1fb0753dfed2549
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=101045d59977bc1f2e6b7032aa736bd6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=fe082b687da1140dd81ca8a2ec5ee33c
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+          - Name: Source1
+            Id: g=c76c1b50b7ffd4c391b9d9ed6f7a36d0
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=7bc173480f29141268b34dc4189f0a17
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+    - Name: OutletPipe1
+      Id: g=ab2e2a4bc85a01b3a55c856586c2d7eb
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=f7b49301738fbd4c57f251c987f7d4e7
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=2b27925ae5080c2fc1f2a832507e9491
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=5a2b1c114d5179023f9164b9a8215040
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=4db22699ae4d5b18425b5471aca3fc9c
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=d4b7f4b640ad265f33e52aeb28396d18
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=cc1bed9ead5512292c33bd531af6d35f
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=1ebf6d2c9539f45d6fa16a513f1361f5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveOutStatus"
+          - Name: Pairs
+            Id: g=bb7dea17efa340ce6a33ec3d6a563cdf
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=51827ad637b791cfcfbd3bf87950e10b
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=d646fe3b8dbc53d77263d27646f9f833
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=1181bc8f712fb329a412d5b0b41beb6d
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+            - Name: Pair1
+              Id: g=8ced8d6211f221c5a47e6f980ffb94d1
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=ab1f3ec745a311d77c5a78aa8245fc87
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=4701185be12e6a92c7f4519066a169f9
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=746814c3e1b1e5c4c93ebe2b336ab89c
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=22fba283e5506037d1f1cc0b5662e7e5
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=b38c319f868215b2910b3fd8006e968c
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=d670cf7a03a1c367bf697eb4af0ebf15
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=004ce9d76ac028aaec5b73efc4491a2a
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=5a6d4e89f1a2bbe3210019d73c7fc579
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=fb02154857f765e0d936e50d2e575d98
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=59694086ab9ca6bf66cf828ab0b0a4a7
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=048b8385e0238f9cad56a8687f811ea6
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=cd8b900d0fd1304052d47faa5cf2b12f
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=66371596d45552d4618f8ddf8b7eb704
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=ef242bfbefbaf8697f3dedc2212efabe
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=18263290e9635433784ba5277637b97d
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=5d49bb52e6676809eebe1fdb3d4c2f27
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=315b7808219f9274f96ba40bdb814e6c
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=246524b9c7671a76ca51264ece9653a8
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=39c35a5c8ab8e5d047022409fa416d49
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=7d3acca8d9e1c2aee0d9d8b1e2e97124
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=42d6dfce067c7216f659fc524e6366fa
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=1621df86ce85b95a7f97eae34bdd27b1
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=025bad3d070e9b8abe23cfb3e7e4e9c7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: OutletPipe2
+      Id: g=254b46a1424c82d3ebe121be63c61769
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=86ff6f2418d3b243e1636674fd9a0606
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=85015a955fc8f2a8c0c49b81c6f86bda
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=44fce505a424cd77a8637252348b2fb9
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=d503057958693441080db970c112ab21
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=d64f4061c8cf42bc3dce74568259030e
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=1f35700e1cc3e34152c237d92bb2df37
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=03a419a1770809b8262d523b1937d7ab
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveOutStatus"
+          - Name: Pairs
+            Id: g=f976544b3fff5e32d58b01888938aded
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=8c54936f7ceb78b0f7b127fb123f28bf
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=88762f78f890b033c53115fa34a5ad4c
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=4905e2236a8fd3166352dd855b95e3c1
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+            - Name: Pair1
+              Id: g=fffc81bea71f983c748fc2a3c44a6b2d
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=2a15b4b083e9af14e8a4e0fc99cb43fe
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=25030f0b73b2f7b22535ca44d247bfd0
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=9318d1c3cf0f814eca0263df65c0c9bc
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=435119b16787cc95b74eba38a04b44b5
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=fca0de4b9c9ec57d1d27bba490143f96
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=91898d4ab7f8179c24940e73481edb58
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=00ac82d245bf95fe5e5b58bb466478bd
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=12c6d891374e5f22f630bd34c97ed4a6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=b73de999b72630537c9673aacd4d7376
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=73e68fc7c15f6a8d2c0cfc366554f425
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=937658c540069ded9429978bbed61ffe
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=4438bd9f693e86ef158aafdf470ad003
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=7b7be95d7953617eb6b7d8ff24f93107
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=88b7e18e6ea269cffa1aaab999da8689
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=67923bbb3d7529484d88fccb1ee79c31
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=5600acb7584b3a9acef502a08ac4f982
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=2e08c3420b9971e751a721c519c4f5fc
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=1d5c3e29114df3b49272c162ad6dff91
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=10afb5b54035bf24ea6137e91b02140a
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=8a3c248dbeeebdc6fcdb248330dcfa39
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=23396b5dab54c737ca53198359806d80
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=0fd109d3b49b1f2a3eda843260544285
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=0c67c0e08f69c27d80a6d685ee36ba67
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: OutletValve
+      Id: g=4ffbe1f2faeb8c45a4bc156cffc71aa3
+      Type: ValveSolenoid
+      Children:
+      - Name: FillColor
+        Id: g=585845a328015391cdc111dfd7beb19c
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#4d4d4d"
+      - Name: BodyColor
+        Id: g=fb92663303e5fa405f04d7f412f78972
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00000000"
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=485f0d6aea2dba07fc6026a4bfaff2d5
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=29fd1a3eabb2efb723328a10022e3566
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=0f11c2ddd0e5dfa368ea5d44185dc74e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/ValveOutStatus"
+          - Name: Pairs
+            Id: g=927a6b4ebddaed752e0cca35294a89c8
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=20fe88a86657a1f32111f777652bb149
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=b97dbb3e5dd0bdfb54a25dd2548e322a
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=f5773cc3459450821db4f0a88c0fd052
+                Type: BaseDataVariableType
+                DataType: Color
+                Value: "#cccccc"
+            - Name: Pair1
+              Id: g=dda38b80d037bdfae9ac2b15c7056ab0
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=34c8a1828974d9a0a85a069ae3fa6276
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=beed87c894a2717d8dfb0e4a1a9c47bb
+                Type: BaseDataVariableType
+                DataType: Color
+                Value: "#00ff00"
+      - Name: Solenoid_x5F_Valve_x5F_Outline
+        Id: g=e6aab0f34ec3af52953fe9c8f0b077ac
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=8d1f18f639fffc2aa8008a45bbb21250
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Outline.svg"
+      - Name: Body
+        Id: g=ef95c0d5a4724ea1739171f522247014
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=23235ca094a90fa92b5c1042fe7d8298
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Body.svg"
+        - Name: DynamicColor
+          Id: g=e3cc988189430b26e06123f699a8bb5d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#cccccc"
+          Children:
+          - Name: DynamicLink
+            Id: g=23ecdafa3b07311877da7ea0c150c6ed
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../BodyColor"
+      - Name: Fill
+        Id: g=3440c4826de156d4380ce2fe17f6147d
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=eccc5dec9245b73666ce303e63c1e0e3
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Fill.svg"
+        - Name: DynamicColor
+          Id: g=a5dcaf18c5640bae1b7716e85298bb03
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#4d4d4d"
+          Children:
+          - Name: DynamicLink
+            Id: g=ccc82c2214e2a02e1be5255222a5c409
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Solenoid_x5F_Valve_x5F_Overlay
+        Id: g=066db898a02905dd57ac2b9aa731fe36
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=345c47798769e8c18249be30851b467a
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Overlay.svg"
+      - Name: Enabled
+        Id: g=63613042742fc64ae011c7cef1b741eb
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=694995dd13371c8d78362c638309bb1e
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=457391f8b18e4ce6651cf2db78c4f558
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=9be93489bc5f1f07ca6e1ceb46e80cea
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: Tank1
+      Id: g=ddc245ec727117626aed2d2ea30578f0
+      Type: Tank
+      Children:
+      - Name: FillColor
+        Id: g=859e37764bef226817d5f055ee451603
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#bbbdbf"
+      - Name: LevelColor
+        Id: g=cbb46a59320084e1b18795e9b52d8bfe
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00adee"
+      - Name: Level
+        Id: g=c7c7a19bd485b5144e6323c93b9297a8
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=dc0a78f979ce08706ba46dbfa54cd126
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/Level"
+      - Name: MinLevel
+        Id: g=8fb973b87ef3c461983b05e6a239b816
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: MaxLevel
+        Id: g=e0bbe31f90ee53447ea051158501759f
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 50.0
+      - Name: Equipment_x5F_Vessel_x5F_Outline
+        Id: g=3810f0d8c771d8e7a5137451eb5107ee
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=48ee1ff3211585e7ad5e0e31bee76bb7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Outline.svg"
+      - Name: vessel_fill
+        Id: g=1b0e38890c896704afa54832d319d221
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=a9032cb414cc53d5e3dcce3347a036ad
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Tank_vessel_fill.svg"
+        - Name: DynamicColor
+          Id: g=5b004022b4113ed59ee11efca700bb6f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#bbbdbf"
+          Children:
+          - Name: DynamicLink
+            Id: g=d410f8d1170e8bae99b564cc0e341ae7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Tank_vessel_level
+        Id: g=3626aeb861573d8b3fb545d31b4c907f
+        Type: LinearGauge
+        Children:
+        - Name: Value
+          Id: g=2a7007def2e80d94b7a316ab60460de2
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 70.0
+          Children:
+          - Name: DynamicLink
+            Id: g=9f51aa3b182443ccc8be16c2aab4730c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Level"
+        - Name: MinValue
+          Id: g=491f55f7463b5456993f1055f860b676
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 0.0
+          Children:
+          - Name: DynamicLink
+            Id: g=d6894588f9310705ad3f20783f037333
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MinLevel"
+        - Name: MaxValue
+          Id: g=582978b6f106109a21db4aea19d53f8c
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: DynamicLink
+            Id: g=0525307fb7d4a8a6e8b42cdf1efd89d3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MaxLevel"
+        - Name: WarningZones
+          Id: g=9dce4d23867df2e86fca93e1180f8349
+          Type: BaseObjectType
+        - Name: FillColor
+          Id: g=ee1182f5b18aef0d703be8c8ade18917
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00adee"
+          Children:
+          - Name: DynamicLink
+            Id: g=a715b0e692a8d4b1cc9d8225ca15f059
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../LevelColor"
+      - Name: Equipment_x5F_Vessel_x5F_Overlay
+        Id: g=26815efee3c7935b8c910b15eb335048
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=3be2de958b71c10c8d68433a5d1c58c3
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Overlay.svg"
+    - Name: PipeFlange1
+      Id: g=3ef7904d5bef13eb6134f35e3360e221
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=1f2898b39402fd81a88963c9f8bddd65
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=6e4e01d23622237efaec5895e1ee7fff
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=806b8f1af0441e662713023be93d0eb4
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=e8735ef2b8b20ddc372f3ee1789729e1
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=25b0d26d8c920672ca184eb02d8ddf3d
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=135f8e55835231f89dab64a5e63b5d1f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=1a7521cc7d4362b7227c751fa784a9e2
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=1eb06dc242f148ac57792a03aabd4ed6
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=8782ff4a7de3fc9a8506e2b8b09af3b0
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange2
+      Id: g=9a0e89b930d1d185edf0723508c98ef5
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=f6635b370909adca6faf45d0195de47c
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=33f995f9900cb31d3d2a433a32fde5be
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=7cee35faae79fad065c77afbc63341c7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=bb3071d4f60e6406468a270d86381ee2
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=5c9d29b5245f14ce5c8d43400e1911db
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=8bbcb4258b66b1e174f27146f4288184
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=5700519e0b1967823d40566a91f9dfc8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=cbfecebb51c03150452b66fa736229ec
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=0288e8ea952510fc8063af78e8436792
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange3
+      Id: g=5a03df3dd60f012704169bc56afa3480
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=31cd06ac898c39f81274a9f2dee8c511
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=8717f58f3b8e5ffcbf804d8ced452a8c
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=0af049d22424d7509e09cbed7ba4e10f
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=400f5327067467e8afc05ae0f0bdbe34
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=edecacf5a8b5a93f97475e0c8cbc5f1b
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=6fdc93155ba7d46d342c6b5ab3f53179
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=98bd569dd4b570f5a3c225b964814bad
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=675c68cab31b676cc7ad3627b7693a2d
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=81335ee89ad9b8ad6c05185648357b6a
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange4
+      Id: g=550459a79e83250c1dc505c3b10e7d81
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=2974719c7113c0fd862a0a8ebd9c5022
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=97bb239d8797531d5ea0fff47a0cf99c
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=cbdf49f824ad32a20dc2abb49003a948
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=0416a4c4db07a5c4c399174acc28d928
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=603770e2ccc647be18c3d7da41b4f876
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=d178446e866039a923c5799a63de618d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=cc19a8cf165b7ed1cae81d252db42c4a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=bae165215faed1435517c460237ed1a5
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=86290fa7cafbc4acac9da87b48d15273
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: Alarm_Medium_Priority1
+      Id: g=33ef50f7fe494a20fdf6c2aaa075d850
+      Type: Alarm_Medium_Priority
+      Children:
+      - Name: FillColor
+        Id: g=4005e9f8181278eed87edd9358f35d80
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#f5e119"
+      - Name: Icon_border
+        Id: g=2530154eac4fe94a9ae95f62cb7d74b6
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=eedbacfdde25c4657042a8a32584ecb5
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Alarm_Medium_Priority_Icon_border.svg"
+        - Name: DynamicColor
+          Id: g=1de277d0907fc0c10e8fcb4dc9446800
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#f5e119"
+          Children:
+          - Name: DynamicLink
+            Id: g=a58e9f27e405307b464d465ae591556d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Visible
+        Id: g=b7149af9cee89b21fa73cba3da3ad45a
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=84e8db02fcfb3d74242f616461037c63
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=04b223ed5d28b7a78ce03c1572a38c53
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=78fd1440e52c2be506d0aaad1d872783
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: InletValveName
+      Id: g=987ffd36aca3a1508babdcfc15a2b7e6
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=8da70c2b91a4b3b1fba65796babfc38c
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=7af5f36f245772acf43c498d0faf499e
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../ValveInlet"
+    - Name: OutletValveName
+      Id: g=a8fc622ccfba4dda130a40c0218e87c3
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=c6751ee2cc1f7204c7d0a7b31e042a5d
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=770818290a12b576a54efd62925a7927
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../ValveOutlet"
+    - Name: ItemName
+      Id: g=ae9495965c490c1b46e2997d7dde45a0
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=77e22e3c05195ed60c941e57d0aed6c8
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=4a1bf2415d6e1bc640a98f57f83414d0
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../Tank"
+    - Name: Level
+      Id: g=9bec1366ab1d37b9ecdac088a21f70d9
+      Type: StatusWidget
+      Children:
+      - Name: Title
+        Id: g=fdc88c32d6865b641987eff61f569869
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=7ddc96d45070dfe5b1031f285339ad0b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":"Level"}
+          Children:
+          - Name: DynamicLink
+            Id: g=bccc2863d0322b3ce689836695ef6107
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Name"
+      - Name: ValueActual
+        Id: g=806bde0cc96069a2269896a9f6e1a4e2
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=2199df51ad9c5ea009e783dbc3fc1af7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: StringFormatter1
+            Id: g=e97e750b97fee9e727a5b4177045fb2d
+            Type: StringFormatter
+            Children:
+            - Name: Source0
+              Id: g=539c38c1fa9c6e1acba7fb8760f676db
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=1897a68d873ecd949612c67c953c0750
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=807ecc8a6443d8f4840d0655f5444148
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=09ef9e501c6c800fe43c2d989d7ddcc4
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../MeasurementUnit"
+      - Name: Name
+        Id: g=56778fda4d6fd7f0c26b3a1634dbe067
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Level"
+      - Name: Actual
+        Id: g=5b2ece332c04cde767a6f10de3a5c2f3
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=b2ebc77df196803e37c14343a52650e8
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/Level"
+      - Name: Setpoint
+        Id: g=521ec59694beaa9e8ad0b44477213b40
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=33de8eb3e9ecac48e2da112ee638b232
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/SetPoint"
+      - Name: MeasurementUnit
+        Id: g=a3b3b02c58f72439dbc9068572f3e8a1
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "gal"
+      - Name: Set
+        Id: g=3042269dc8553a4bda75012ce5ac03b0
+        Type: EditableLabel
+        Children:
+        - Name: Text
+          Id: g=103e9ecbb7554eccb59300d1b0ad62a2
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=e67b0cee68be6ace1d679d6affdeeb4b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Setpoint"
+      - Name: Unit
+        Id: g=46681e13b43648c24007ff9a52edd4bb
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=1cdd9513e7a469299b385006cbfb6116
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=a1c43c6a537bd15b8896e09406251557
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MeasurementUnit"
+      - Name: Arrow
+        Id: g=bbe5921736bc82c1efc9d91d11446439
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=51ad5f425a2097aea0b98c37d17d981e
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Setpoint.svg"
+      - Name: ExecuteMethod
+        Id: g=d1040d5897f00b3c622c864b87396ab3
+        Type: Button
+        Children:
+        - Name: Visible
+          Id: g=259e74f38cbe0d34d8345f01664bdf37
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: false
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=7674a8bf6002427b06d926e07bda0e1e
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=4d7b95077dcd7302db7654b9688a3ff9
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=d8c1a94610d23826e61cd37c3eedef96
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=c95ce036b4a1bd71c69b809413a1b072
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=4fbee191d7e6c24a89713fed340f5ba4
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Setpoint"
+    - Name: TankAlias
+      Id: g=526a28b283c73897f2e45bccf51f26ab
+      Type: Alias
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Children:
+      - Name: Kind
+        Id: g=7f57af39e5d01343efda14bdb601f56b
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+      - Name: DynamicLink
+        Id: g=14e4d3674a273cc0e702fe99c0891429
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{MainTank1Alias}@NodeId"
+        Children:
+        - Name: Mode
+          Id: g=2a3e8e2f0ff46ab5ab3cf09a82ca1fb5
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: FillingCycle
+      Id: g=bec3e4cfab27cf1afe0213e3e3a555a0
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=77749d1d1b852ba880714c9e0852e929
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=2ccc7e608d864df90d08eabfdda5f4da
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=9a9ae06cad7214146ca75eeea14ba8ac
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=d52e0416154f27110b9547d1adb22d08
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=8bbf3d8719a4c9e891cb360330b9de70
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=3a085d53e8aa19e5618184d7ee85bcb0
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=5e0c7a5dc997b5ea6324ab5008907ccc
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=50a1f92dd2af105b2d96b0a5e27ac07a
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=e81ebd14bf5b1ac5cd5600da8833218b
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=6ec79378e07f9e732edcc01bb808cd16
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveInCmd@NodeId"
+              - Name: Value
+                Id: g=74a7c204e5839315acdf9de5b420dd93
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: ArrayIndex
+                Id: g=a192f6b3a0ab2189546f14d323ac34d2
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+          - Name: MethodContainer2
+            Id: g=38f782aa804114c225b75cd4c38acc30
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=2c70ca90f706e0e068caf955944ece31
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=9f37c98125e7f239f465f3bde9260582
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=8246afc2f64819dac4c89385ef60e6a9
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=0f920c6be5aac276177357a18f59abb3
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=c86bffb5fea0d04b827affe3d9962543
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=12c83cb2a8b0fbfa44e36f099d1e3a9b
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveOutCmd@NodeId"
+              - Name: Value
+                Id: g=bec94f42b956dd45bbd080c8b6b35655
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: ArrayIndex
+                Id: g=b181a1bbde075004e5b819a7a56db264
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+        - Name: EventArguments
+          Id: g=e898f61e73700de592c11c4ebedda071
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=0def7cbe0a35a0afe9fcce666b825d99
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=1f63e408fb3a85d9bd08a88ae1395e0d
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=7602c7e896ad2e1b6b92e57ae492784b
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=212643fc854ce53db827dd10ae7e9b1f
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=050f8ca1a375defe6033da3f903e6a7a
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=1e70a26ae27b398229066d7193178b02
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=1a144deac431ee0447c81a0ff5889f64
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=ea7db3587de8d83976c4c5ba1c06b494
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: MouseUpEventHandler1
+        Id: g=c1ca7a34f383ca89a034e61d089494ec
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=64592441a07a4cc87164ded912e2f41b
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":15,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=a3b0ae6e67e9dbf6a641574e793aae55
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=666cfcef39ebabbbd1307caaf60e8418
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=b252fa4d0a4432bd80c7d23c76456953
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Id: g=05edffd07a848df200d78e7754bf6ed9
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+              - Name: DynamicLink
+                Id: g=cf67ff70fbc953725caf17cb8f3dc637
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{MainBoilerAlias}@NodeId"
+            - Name: Method
+              Id: g=9caa82b1f1ac293d0eafeda90bf135eb
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Fill"
+            - Name: InputArguments
+              Id: g=fb9e6c36cd8b98736aa410e6aa3c9558
+              Type: BaseObjectType
+              Children:
+              - Name: SetPoint
+                Id: g=65e173eff63b70bef69021c082906f5c
+                Type: BaseDataVariableType
+                DataType: Double
+                Value: 0.0
+                Children:
+                - Name: ExpressionEvaluator1
+                  Id: g=47921124486dbed354411594087e9a0c
+                  Type: ExpressionEvaluator
+                  Children:
+                  - Name: Source0
+                    Id: g=39725495e97529f31b9432d152d64c00
+                    Type: BaseDataVariableType
+                    DataType: BaseDataType
+                    ReferenceType: HasSource
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=928ee252a82898ca23c2ebe1edba0ee5
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+        - Name: EventArguments
+          Id: g=b9e66f19f1730ff24d712491b557b060
+          Type: MouseUpEvent
+          Children:
+          - Name: EventId
+            Id: g=84c07da4829f7ef2d950e2fb79653081
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=ab3bfaa706640999baface6e57a1d7c8
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=2aba692b8f778048c5893847768edd8d
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=128a3cd02cbc2678ebb844f425d9da71
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=31621607b1e84bcd696010b2bc77ac86
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=f3fb2360a84989d82202bdfd86b580a9
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=e9c75c975cb22ac30172e20da83fc98d
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=e6ed5ac7aa21dba8e2c767ca580f8b5f
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: Enabled
+        Id: g=19948ee46a3a8daef0902ede605ce5a3
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=b0f0e7a20260bf5f1e299c96e0a0052c
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=45a181ddc1ee0692a3c4f7e00c939692
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=a0542ee333dfc7e5333a0814ff1d1eaf
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+          - Name: Source1
+            Id: g=55d0f2a9be31590b44026566e1791190
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=35cd822cc4eff1f287859810717359e8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+    - Name: EmptyingCycle
+      Id: g=5f539f35a6bd83a1d9ca0dc51e0e777d
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=e7ad4b458b99c7e07edc754c18b8bac3
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=b3b75aadc54e0ed8c5c0a7d0f10c57c6
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=902320b07e15f38870cb4139cea4fece
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=eeceab40223ee67516c45f3908c1516d
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=416e87ab1a64527095fffef1e9d2f21a
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=4461f540ff48540fee45183b256feae5
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=a28b7a5d2b739701a19410bcdc38fef2
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=a96062bc0ee1843c81719f6b2ad1e4a7
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=db35f01aa8a841dcd78ec312ea8c87d7
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=9f0accf9913e649851890319fca3d832
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveInCmd@NodeId"
+              - Name: Value
+                Id: g=0fedd8a75b31594a90d0a49b7f58af06
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: ArrayIndex
+                Id: g=c322cf0f521545498fd5f312e1a2f7fb
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+          - Name: MethodContainer2
+            Id: g=bfefe1874fa8f35c2eee57cd5f6518e8
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=0f3e5621268e12a3787c738f278a0119
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=45031b99c7123e099760328911a256a3
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=be3b799118a4548ad12c034e565cba39
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=47aa611845023453ab0fa27afd3054ca
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=5cc3dc2cbafcc75f1d20066f3157610b
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=6427f14b9f7cfb51c6b066247351fafa
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveOutCmd@NodeId"
+              - Name: Value
+                Id: g=28a95c023313ab2476eb6830b956da82
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: ArrayIndex
+                Id: g=d123ba3f28220565476b89c2a908c394
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+        - Name: EventArguments
+          Id: g=8a1529b03f5b01df2fd8f069f07f5612
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=13e1397febeded4a5b63923bcd7474f9
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=8d0ce9b7d824309a21d2e87ea340d9b9
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=19a17ec24cb0b33d1122a004c228a476
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=56b02291007eccc22a486b895eee7c33
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=589d37cb815656b7823a6aee4c2d63dd
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=bc7e23a57226c03277fe1ac34893f3c8
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=eaf8cec64d149a0c235fdbab2fe3a180
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=43b3d287be8dad970bb921fb3c727fbc
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: Enabled
+        Id: g=a6dce59ee11779a2a3eafaf8351e06ca
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=71f03038ba9299cc7337bd44fda61c3e
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=3184c02ad29b9828a09c9549e5dde6e3
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=e214dd1d2cd64e2219f279467f147854
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: Tank
+      Id: g=9c5f8a2362b5811d7e1df7dc5aaa16e9
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "T1001"
+    - Name: ValveInlet
+      Id: g=77bdf14f5dd56d837768c88ef5c8365e
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "EV101"
+    - Name: ValveOutlet
+      Id: g=aec5c47d441a7d73d8c128ae0a038ebb
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "EV201"
+    - Name: LeftMargin
+      Id: g=9f9514c24b7fb586e67d9f147df4c8ab
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 850.0
+    - Name: TopMargin
+      Id: g=c66ecdeb0349958324fdf70f5d246b34
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 60.0
+  - Name: TankWidget2
+    Id: g=e6b43f76e9b840ef5a6f7dac3f7c4224
+    Type: TankWidget
+    Children:
+    - Name: InletPipe
+      Id: g=cc3617fe38537f87b010e3959e56505a
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=df4541dcb3de38ba955cf05800dbe411
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=bc07e419ef73d02b4233db191a5e68e3
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=3fb3c2a9c0bea689c6a763197b9fd4fe
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=1a525aac3ddc38cfcd269119c21b05c6
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=5f3fc6e0575e91091db474232023361f
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=842cd40652b8c0596a7fa99b8f9dc8d4
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=bdc8051c19b035cc14f48f78f64a8909
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveInStatus"
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=e4659abe328a0937390e16124479efa6
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=91923dd09578fdbca90e4c60fe627e7f
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=c95cfe0a7493e3e574763890cc4f4a48
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=dd3c3fcdc1085eb919f97f5c98855ac0
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=6c1107f335b3ac804a0fe6eb035671a8
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=5f7b42e64271cb41fada6abd401e7581
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=a48b0ecfb6d548e0032898c9453fdf72
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=fe0c3d15211c518942efaa2c0517069a
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=4d12defd91515fb8c19ce0213bdec16e
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=a95edc6438ccba9521f1d06a474b47b7
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=c85c21253055e6cf313e12e4903820be
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=9bbab283a9a2eb699bd6c825dc1d945e
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=c559b793498c5c0ebdd23548b14bae8d
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=74af462a431dbd1cf29da5e0fa5f024c
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=d4df1d36cf7e4ee6b322adb51de79113
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=309c617db892bd7ea2d0e0af345369a6
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=0deaaf2f32e0e3c626e1852d179b6dac
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=2e563ac1e96164f713a889aff7f148a6
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=ddf810df20faef3c0ffbd28d77486452
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=71fb7b6ab79db84e4f462c3a8317dad4
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=1a2754ab133e30e5e43b652426f97224
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: InletValve
+      Id: g=f3d23673a09486d49fa326a19e0963c3
+      Type: ValveSolenoid
+      Children:
+      - Name: FillColor
+        Id: g=eb0e386337701503954b24bb7a9a4739
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#4d4d4d"
+      - Name: BodyColor
+        Id: g=2df49a55041198762387efb2cf8f22db
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#cccccc"
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=4b0ebb5d2cd5c094fe785a2d8dc730b5
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=24ddcc8bad003e5bfcccbd596531d0b6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=e20a476922bd853391cc9e9f08f0c81d
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/ValveInStatus"
+      - Name: Solenoid_x5F_Valve_x5F_Outline
+        Id: g=bf8426a8b0a2857a615ff311fcd5b732
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=8102a2ffeb171b6b6acfe02e1f33c2f3
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Outline.svg"
+      - Name: Body
+        Id: g=9d664af07d7ab9c4686e9b3d3551b59c
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=8bd6e7de4aa11ff4932e33dc29167bcd
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Body.svg"
+        - Name: DynamicColor
+          Id: g=1d01f97a28eaba9128d5206db79bf5a6
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#cccccc"
+          Children:
+          - Name: DynamicLink
+            Id: g=b1f15064c61c910dcba03285e7f96063
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../BodyColor"
+      - Name: Fill
+        Id: g=d9f7927ee3088eccf8b4be6489ac20ad
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=2befbb5f9b09cba092ea5b6c48dab6f7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Fill.svg"
+        - Name: DynamicColor
+          Id: g=55c471931e5fac27250086b7b90b7b2d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#4d4d4d"
+          Children:
+          - Name: DynamicLink
+            Id: g=1919bc63c73de567cdeddc95df3332c4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Solenoid_x5F_Valve_x5F_Overlay
+        Id: g=7f15e7118059a824a9792458fbcfc72d
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=53db8ac41842f86c994f870d78d52743
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Overlay.svg"
+      - Name: Enabled
+        Id: g=7454c870cc6730047b6133b6f3312c5f
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=471078fe77a7f54d6a4d379c4056ee2d
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=b2b378f3b16914e0c18279e822e37415
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=b83b4bec4809772340766a9f36c60aed
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+          - Name: Source1
+            Id: g=5fe480c31d26948dfef87cb22a0082b7
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=4eb3863323866ccd8e93bd664eade278
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+    - Name: OutletPipe1
+      Id: g=fd4f36d6e27e0d19a3adbc966cc1a5ac
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=0dc3eaa3faeb683ea96c8af3029e7ede
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=2bbd0b70b6f155d5d34f7d1f1b9c1240
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=b8bb184aa4dae558b7ba48e16abda110
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=90795f028fac47263872d7a695d6b6f4
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=131decf9ee3269e6edd3fe472252a5ab
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=b5807f0a3e6e1ab06aa704c248473c15
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=2cfc39af78c063c47e84b62811edfcb8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveOutStatus"
+          - Name: Pairs
+            Id: g=edd954d409544cb680999951dc24c6f3
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=f45205a9e49901fa58f23f6458ff8c1f
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=809b0b137f8a749953436fa6a0d39025
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=a3ffb59fdcf739388e3ae947be08a5f1
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+            - Name: Pair1
+              Id: g=3766d56148f5fe38368b89f0d07362a2
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=19e54cb28fa0fa848f25a8fdf4a5b77a
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=aaddd2c883ca484efff2d420d07b429a
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=cbe1aa75a1de83b9c114efe9d1de3ac5
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=8f01a747e81b842fa64a950c1e61f87b
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=818da4306a0bf7151e4b689638d45f9c
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=7aa0fa6a194703c3e137dfc177f90a3d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=cbdcdc4df8803fa61da2fd95ad1f581d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=67a5af0f1d2c7761d0f546d902f6ed74
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=5c8f1d3784fa1923497e87f97d3003c4
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=f0152b1c726b665e5f6b9b977348ffaf
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=eb5c5e2f7b661a1a42a5767ad82c952a
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=4a9edc197d27a44a84c20469833706a3
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=0013a964e677e3bcf43710c1bb6f5cc8
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=f3a5aac8c05fd1b9b57c5c74ec50ac30
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=0a627146f4690e58f2510fe855f3cc53
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=0834cd3734eb75cb51f7142d30b46718
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=24f336deea602ced831839da4eea05a9
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=017709e851f092eb3aa14ff647a7e2c2
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=533c90853d420148cda14f9a5b6571db
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=85dec1e6f0717d9240b5351af2f4cb5a
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=2fdf7ca6b32b00cbcde02f0e26513a3f
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=095aae5da465d120f485d61405c072bd
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=fc00d7c6ab2771ed24be0cbcdc3d0a30
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: OutletPipe2
+      Id: g=c19e4bd8a4c2dfa907ef0a9589cf0db1
+      Type: PipeStraight
+      Children:
+      - Name: FillColor
+        Id: g=daf45dac513318bca130ddc0cc7a340d
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: FlowColor
+        Id: g=4da5060b4d56852fc9eb2a968e851f7b
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#26a9e0"
+      - Name: FlowOpacity
+        Id: g=0f4c837f1428b06a5d3034f17281aa68
+        Type: BaseDataVariableType
+        DataType: Float
+        Value: 100.0
+      - Name: ShowFlow
+        Id: g=82328aed361e0981f5a7c46c07ab3f56
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: false
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=09145dd8fc9a04a6a15a93bc015e18ef
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=986d4d106d54bd21890a4feb735e6403
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=5ccab874367f59c1025bde0e356cddb9
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../TankAlias/ValveOutStatus"
+          - Name: Pairs
+            Id: g=d00c7bf09ee34f8f03df92e3dd499055
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=7c8e5735aecddae6fb29d2243ebd1955
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=26ea97f931f2b926afc4b4313508a87e
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=dd09e048b958f8b41b76919df76af874
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+            - Name: Pair1
+              Id: g=030b1c1fb7d14b8df848d8c6e515a590
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=d9dccc7cd2cf0b1245b6b188cc61edef
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=5dc9e78505967de3b21c5da4ae18c8d5
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+      - Name: Piping_x5F_Straight_x5F_Outline
+        Id: g=4b37a043836dbe57c7c8e1f43bce7083
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=1219bca54957ae28f3128675da403a29
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=f49f12cf4cc0c8fdebb74b81658c657d
+        Type: Rectangle
+        Children:
+        - Name: BorderColor
+          Id: g=225e7c128f030cd44106f2ae5aeb5f5d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00000000"
+        - Name: FillColor
+          Id: g=34fa1e3dec538f776b4f8819227fd31e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=8cf994efbf33aac0d8e1b2cc0c4514ec
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: flowScaleLayout
+        Id: g=7cba8dd7112cd92cfa56ea230a498897
+        Type: ScaleLayout
+        Children:
+        - Name: Opacity
+          Id: g=51e9e6188d3e136e65a189049689dc7e
+          Type: BaseVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: ConditionalConverter1
+            Id: g=68d9a90e844535545cc336e8667ddb4b
+            Type: ConditionalConverter
+            Children:
+            - Name: Condition
+              Id: g=93f6123f60a603495039327628a485f5
+              Type: BaseDataVariableType
+              DataType: Boolean
+              ReferenceType: HasSource
+              Value: false
+              Children:
+              - Name: ExpressionEvaluator1
+                Id: g=15a49a53a786bfea1e59f46bc6273bef
+                Type: ExpressionEvaluator
+                Children:
+                - Name: Source0
+                  Id: g=1c5f27c8e03c8d295d0512e2e1c1fda3
+                  Type: BaseDataVariableType
+                  DataType: BaseDataType
+                  ReferenceType: HasSource
+                  Children:
+                  - Name: DynamicLink
+                    Id: g=7f380d9049ca1e5300dab9248aeef8b4
+                    Type: DynamicLink
+                    DataType: NodePath
+                    Value: "../../../../../../ShowFlow"
+        - Name: FlowColorPE
+          Id: g=2d7833975647f7a97f136fe9f6392690
+          Type: Image
+          Children:
+          - Name: Path
+            Id: g=205a031a932b0fbe6785d7c9248d4a33
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=43;%PROJECTDIR%/res/PipeStraight_FlowColorPE.svg"
+          - Name: DynamicColor
+            Id: g=9116613dca4af9e8b5307aeb4b9fb978
+            Type: BaseDataVariableType
+            DataType: Color
+            Value: "#26a9e0"
+            Children:
+            - Name: DynamicLink
+              Id: g=3e91b5de4764e6d913a671e54e8b2e4e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowColor"
+          - Name: Opacity
+            Id: g=38363fcd8cf32e9aa0d73e60b10fe977
+            Type: BaseVariableType
+            DataType: Float
+            Value: 100.0
+            Children:
+            - Name: DynamicLink
+              Id: g=a9eda5be59154aabcbd88361310c9f65
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../FlowOpacity"
+      - Name: Piping_x5F_Straight_x5F_Overlay
+        Id: g=54cd65bca6a9e2ab2f160f8c24fddca2
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=86e667a4311447a0003c653bc521ec8c
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Straight_x5F_Overlay.svg"
+    - Name: OutletValve
+      Id: g=8c6f4d8239b0f354bc3f549095b88c38
+      Type: ValveSolenoid
+      Children:
+      - Name: FillColor
+        Id: g=b9826f2ebaa12aa630ad29d9c3da73f1
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#4d4d4d"
+      - Name: BodyColor
+        Id: g=90a4696f36a871934b24352218e89013
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00000000"
+        Children:
+        - Name: KeyValueConverter1
+          Id: g=6c199bca04ce1710db7971f0a0c2ea3f
+          Type: ValueMapConverter
+          Children:
+          - Name: Source
+            Id: g=4cdc679cd01c6ffa24d1acd77dd3ae89
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=c5cefc09124f87ab2dfda8b9abce6e5f
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/ValveOutStatus"
+          - Name: Pairs
+            Id: g=e6deac2bfe91905977b8f821ee01aed8
+            Type: BaseObjectType
+            Children:
+            - Name: Pair
+              Id: g=44354eb6e1712250a2e67628f019f94e
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=3b1d2da85bffaec9f00424caefff1d4d
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: Value
+                Id: g=169cbe2b0a483ea606a8c0de0c3e86ab
+                Type: BaseDataVariableType
+                DataType: Color
+                Value: "#cccccc"
+            - Name: Pair1
+              Id: g=931e77c1eb8fefa7fe2b8189a574715b
+              Type: ValueMapPair
+              Children:
+              - Name: Key
+                Id: g=5160ba7f9cfd213c9b59e5711d938c10
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: Value
+                Id: g=ddd2981abf204f421c13e79b80a5cee8
+                Type: BaseDataVariableType
+                DataType: Color
+                Value: "#00ff00"
+      - Name: Solenoid_x5F_Valve_x5F_Outline
+        Id: g=a87f6660c821c0fe18cb4330b3c3103c
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=895eac0f2eea09b0fee91907ca60d0a7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Outline.svg"
+      - Name: Body
+        Id: g=86456372454328ce38805f6b55699ac0
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=c26dd2d23fc88014855ce3e72594a545
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Body.svg"
+        - Name: DynamicColor
+          Id: g=89e19960e6e37f13354cdc96a2b37107
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#cccccc"
+          Children:
+          - Name: DynamicLink
+            Id: g=91e4b241a76132f658896ce3e848f392
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../BodyColor"
+      - Name: Fill
+        Id: g=ef40f886ea0ffa2ef178762613b1ff31
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=e135af12d06875d87f72345ceb4a10a8
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/ValveSolenoid_Fill.svg"
+        - Name: DynamicColor
+          Id: g=7befb36e2932a82207c115498090b111
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#4d4d4d"
+          Children:
+          - Name: DynamicLink
+            Id: g=fcb69dd9a287a4291b3a0e1beec71d39
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Solenoid_x5F_Valve_x5F_Overlay
+        Id: g=9fe3a8b8e3dbf914c9a09d49c81e5715
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=35406afabd9623f9795053812ced7d02
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Solenoid_x5F_Valve_x5F_Overlay.svg"
+      - Name: Enabled
+        Id: g=d16ac112efb1820a15d8c45013c3647a
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=3a24b768ee8fe12b7cdeb4e43c342e24
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=325bbf8189d92d6e81629f5a13aef209
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=e645ba454cfd62198142567462872ba2
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: Tank1
+      Id: g=73ebe9dcd4ed0d6c25591c8e8846bc25
+      Type: Tank
+      Children:
+      - Name: FillColor
+        Id: g=b742bd2982818ef19d45c88470e4c448
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#bbbdbf"
+      - Name: LevelColor
+        Id: g=f8dc8b89e923950a227ae24898b3a832
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#00adee"
+      - Name: Level
+        Id: g=7110356edac290e0a4bafec49662abf5
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=32708511db06489ca703b9ae8795bcdd
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/Level"
+      - Name: MinLevel
+        Id: g=3acc3220617f9e19dbe269fa93819de4
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+      - Name: MaxLevel
+        Id: g=a616a5aa14dee583c7ca1e2f0c619f17
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 50.0
+      - Name: Equipment_x5F_Vessel_x5F_Outline
+        Id: g=4d7a1a38a1083e8de5f04fb1831f0d1f
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=6310ce7ae002a16651e0f677edc2661e
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Outline.svg"
+      - Name: vessel_fill
+        Id: g=4b6b21810c6a844ffc051728b3ea2d04
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=3b0a64f68eaa741e05d917c324198974
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Tank_vessel_fill.svg"
+        - Name: DynamicColor
+          Id: g=24430784e1d3f5146cb0d8a1a77be825
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#bbbdbf"
+          Children:
+          - Name: DynamicLink
+            Id: g=97dc376e2d9a3616cc46b912d9d3b6ec
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Tank_vessel_level
+        Id: g=0460e9aa6e9c3ae92ad5d5374907bdce
+        Type: LinearGauge
+        Children:
+        - Name: Value
+          Id: g=1a16df442407e28be7884f48446448fa
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 70.0
+          Children:
+          - Name: DynamicLink
+            Id: g=d33b8f4ca50b5e54322becd07c938a2d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Level"
+        - Name: MinValue
+          Id: g=a9580589e7abee59cba1a895865e47bd
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 0.0
+          Children:
+          - Name: DynamicLink
+            Id: g=87ecc4eb36fc0073fe04330c8419cd5a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MinLevel"
+        - Name: MaxValue
+          Id: g=e602cc249c07dda5368a074fb33fb0e2
+          Type: BaseDataVariableType
+          DataType: Float
+          Value: 100.0
+          Children:
+          - Name: DynamicLink
+            Id: g=ed867c38134275dff281ebdd274d42e4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MaxLevel"
+        - Name: WarningZones
+          Id: g=672563a354fc0efc3a89ed6b499ee2a4
+          Type: BaseObjectType
+        - Name: FillColor
+          Id: g=e4484ec6f40e29fa6f0233dbf1f7901b
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#00adee"
+          Children:
+          - Name: DynamicLink
+            Id: g=5b50fae24f3ed0c450ecadfdb166e7d6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../LevelColor"
+      - Name: Equipment_x5F_Vessel_x5F_Overlay
+        Id: g=b79b115e4a62a2362e90298d7799cc65
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=c8abf93dfa4b2943de49e16789ef27fd
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Equipment_x5F_Tank_x5F_Overlay.svg"
+    - Name: PipeFlange1
+      Id: g=1249e6be282b02eba4519bdc61df1b7d
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=900afe26d7904ccd7d83f0ab886de93c
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=5686bbc7c1aa46d499c5494abc1d9d86
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=85ed4516fba4b4a2be2b07cb2c25dd7b
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=469857733e89469dacbf94abf9667bd3
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=796b552a3954058c0b5f35c704baec12
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=62f1139239293c30d2b250e35b08029d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=abd65f449e2c097e9f5eb2b558aed49c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=c3604f6c00c75f6d94e5ab1658ea741e
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=a39e2ef06ff6de9ac887113dbd1030f0
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange2
+      Id: g=88a74b4e4b356592e63f18a7298ca7da
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=aff23b63ba76aa88b9d9a9a45e59ea8e
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=c2bdccdf184bb7bdf8168fe5e80136c2
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=91309a4b0a877f970c2778781dd260ad
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=dc0aba9ac81cdff4df66720c0a6ced38
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=18f4c7bc52a41876295b0924ff1405b7
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=9069c98cc569979379ce4cda10c0916d
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=365fc8d86c2e1e983a97524411e61024
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=638f983005eea361b8c8de3322a12509
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=b61a250ea7aac1ea3fc345a208e25d70
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange3
+      Id: g=9f7239e21538346b01f1f26355a19b06
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=5409390df512ec969170aea04d02e465
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=94d4368c6e25022051d923da6d47cb92
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=9dacf09c1d03185c72670188ff1bd42b
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=6a3a2e0ba69e3e87d8ad1074cabad199
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=a668277e4400f257c98595254a602335
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=cd85c9d301de86324170cf61a9a8c06f
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=09fd5487ab612941c02a063e67e469de
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=29ba2f62afb47df818742c0f77a482cf
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=478bdcdbcd6c42ddbfd36d2879e8a4ef
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: PipeFlange4
+      Id: g=15709ebd783e2920c3cd6028200075db
+      Type: PipeFlange
+      Children:
+      - Name: FillColor
+        Id: g=f2b5d19269fc58a294927c08a49624b7
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#d0d2d3"
+      - Name: Pipe_x5F_Flange_x5F_Outline
+        Id: g=40da0cc5deae4d5f8cdfc5838cedf4af
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=d16841c134b5b3c374f073db74663d5d
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Outline.svg"
+      - Name: Fill
+        Id: g=a04898ac3a553a3636e5cd67a982adb9
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=e41a0e770db6fc5640695fb3027e77ba
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/PipeFlange_Fill.svg"
+        - Name: DynamicColor
+          Id: g=6c60cf8f484111946cac1162ceb9d1da
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#d0d2d3"
+          Children:
+          - Name: DynamicLink
+            Id: g=72187a0b4f9ae36925e56a4c6a54fe85
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Pipe_x5F_Flange_x5F_Overlay
+        Id: g=a4eebbb6e6ca5c01d90ef836cbbc611f
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=4ebbc19ce93e8b7f4326fbbad157ba6f
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Pipe_x5F_Flange_x5F_Overlay.svg"
+    - Name: Alarm_Medium_Priority1
+      Id: g=9a63b89c07cd7a0901e372e64d46b642
+      Type: Alarm_Medium_Priority
+      Children:
+      - Name: FillColor
+        Id: g=768466ec6e37eaba1fc47aa887919b63
+        Type: BaseDataVariableType
+        DataType: Color
+        Value: "#f5e119"
+      - Name: Icon_border
+        Id: g=c76969c2ab57842163dab7ab6f89092b
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=db25af98c476c8c587127a1153566ee9
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Alarm_Medium_Priority_Icon_border.svg"
+        - Name: DynamicColor
+          Id: g=d5dbbaee53782c044ec2937d8c70002e
+          Type: BaseDataVariableType
+          DataType: Color
+          Value: "#f5e119"
+          Children:
+          - Name: DynamicLink
+            Id: g=af17eec0b85304d532c67f99733c6fd7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../FillColor"
+      - Name: Visible
+        Id: g=bed3e745fe35091429c4b8375200b5e0
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=0cee8fd4df36fd3aa2406bc51f2bff02
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=98ae2503d2cacd06c560d8bf2facc9d6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=44119e5019dab3a2a87441b118630b4d
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: InletValveName
+      Id: g=4805c65afe0de6402181127b0b402d8f
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=a647c73702d91ae96b3ac8df43383744
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=2668f4bf186b62991fcf5a412d90f201
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../ValveInlet"
+    - Name: OutletValveName
+      Id: g=c4a1edc1a5bbb8b5be531206b464cf86
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=b93116058d291ea85280ae1baec55210
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=37a48f8162a768f4d218daefd894a947
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../ValveOutlet"
+    - Name: ItemName
+      Id: g=257f21ccbe64ee76486ac99cf759b8b1
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=0c513c43f0bcca29f3dfc0c4633ecc1e
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+        Children:
+        - Name: DynamicLink
+          Id: g=6c57e6af436f45a0061b63a057d7dfdf
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../Tank"
+    - Name: Level
+      Id: g=648aa7693fa786dddb5f8fd73776e3a6
+      Type: StatusWidget
+      Children:
+      - Name: Title
+        Id: g=c7bcfc071c6859d950aae24305631c88
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=85e677673f5eaf03172464a59c3d95e2
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":"Level"}
+          Children:
+          - Name: DynamicLink
+            Id: g=c27d7294da84d1a4ae94f73b811602a6
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Name"
+      - Name: ValueActual
+        Id: g=c0e4ee436985455762bcf9f14a796a6e
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=f448ec747eafc65ab8ec036f14bec654
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: StringFormatter1
+            Id: g=e7c1b06a671973e9b085eaaf781be557
+            Type: StringFormatter
+            Children:
+            - Name: Source0
+              Id: g=0a177ef774655c738ed80f2313c650ed
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=16c5e80ef439f2b8172f8c0096009417
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=340924f3ba67d9c00751715ef974e914
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=092da42d0877bdd46f0f73e8f4e042b4
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../MeasurementUnit"
+      - Name: Name
+        Id: g=48a9b2f51226fae46a9844ace82e849d
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Level"
+      - Name: Actual
+        Id: g=142390a8d4a602068081f9bad19a81a4
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=4865c4204d3f5c2a166f429440ad1364
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/Level"
+      - Name: Setpoint
+        Id: g=fbf84d404b4d4d0bd4e62eb735deadbd
+        Type: BaseDataVariableType
+        DataType: Double
+        Value: 0.0
+        Children:
+        - Name: DynamicLink
+          Id: g=a69c8a536715bb8f70f620d498a595c8
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{TankAlias}/SetPoint"
+      - Name: MeasurementUnit
+        Id: g=c2b7a3aa20070340ad8e5e8f93239aee
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "gal"
+      - Name: Set
+        Id: g=38dd78586fe6c8e351bbfa1a7e2c4414
+        Type: EditableLabel
+        Children:
+        - Name: Text
+          Id: g=61d51d6ccd18e4b1163b70f21f4136aa
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=a7af09b005990ff0972a9971e38ba4ce
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../Setpoint"
+      - Name: Unit
+        Id: g=eb203e159c0631671c4006ceba50bdcf
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=9218c3298aa2289fc2a394d1539fa076
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          Children:
+          - Name: DynamicLink
+            Id: g=cd657bafb5b159debc7dba1afc1d00d9
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../MeasurementUnit"
+      - Name: Arrow
+        Id: g=326edb1c57b2df164e7c16126056a342
+        Type: Image
+        Children:
+        - Name: Path
+          Id: g=49769aaffaacb21bb16baeafadc6ea3c
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+          Value: "ns=43;%PROJECTDIR%/res/Setpoint.svg"
+      - Name: ExecuteMethod
+        Id: g=663d474bb91fa956779a7be3689a6c0e
+        Type: Button
+        Children:
+        - Name: Visible
+          Id: g=3c71bb95d5228e05cb236ba5aa194912
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: false
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=31cc279b394851aaa1e46f72dc582e4c
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=029bc89280a351db43e33929323dbf37
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=95b87c3ebac2eeb11d81ced509363592
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Actual"
+            - Name: Source1
+              Id: g=8182d897f9d6654910d5ce5246848247
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=013e50d108c146933b3d7fab6ba21769
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Setpoint"
+    - Name: TankAlias
+      Id: g=27e2126f2d0cb668e69a6233807095f0
+      Type: Alias
+      DataType: NodeId
+      Value: {"IdType":0,"Id":0,"Namespace":-1}
+      Children:
+      - Name: Kind
+        Id: g=c556f534cae34c8dbd36f82837961454
+        Type: PropertyType
+        DataType: NodeId
+        Value: {"IdType":0,"Id":0,"Namespace":-1}
+      - Name: DynamicLink
+        Id: g=bb5f36c1837cd3f952999fa29ac2dc56
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{MainTank2Alias}@NodeId"
+        Children:
+        - Name: Mode
+          Id: g=ffaf3e17678675d959b0c7a244e230ca
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: FillingCycle
+      Id: g=9e14b2a3b1824cbc19f1bb17dd29011c
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=2bab82f489b235fe989ad5a16ac44a3d
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=6ce0b2242792c44e872fe054db818bd1
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=c940b13597d06804ca76a7aa39a8cf24
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=765a4ec57865583979173a5b3afb9c49
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=5c4bfbe485e8d8fbf8de4697500cac15
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=3f5ee7f90a6913f4ec3950c1285504b4
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=be355747113fa4c612a9f2962e83434c
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=4c24dec10ec2b869c3ae397375599cb0
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=a3ce0fa27ae73232e4506485f56c9425
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=5b3c5a21e24a9cbe52ba8d77beb40e3a
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveInCmd@NodeId"
+              - Name: Value
+                Id: g=9850cbb1dc213fbc6d54de0f5c7bbf0a
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: ArrayIndex
+                Id: g=92e01bf1dad61ec77ae5827f99ecbbe4
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+          - Name: MethodContainer2
+            Id: g=337decc079973bda7ea9a6c67cfecdaa
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=b1eea6aa2cdff19d34713a9af7448d3b
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=eca17eb4fd3e00cb377fd6557aae12b3
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=3ca81cfe0cb019f5d717b77611ee46af
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=fad5d5222b9a2565623c256ba41cef16
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=bab22add90b49d1de1cfb63e0678c6cf
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=c5910f2e786cfccec472d02127243515
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveOutCmd@NodeId"
+              - Name: Value
+                Id: g=3b7d8474d52419e495378e424aa17d8e
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: ArrayIndex
+                Id: g=3aa1cc8b11dbc940bceffcc7d22fd6ea
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+        - Name: EventArguments
+          Id: g=097c4d633eae48d62ecca6f819dc22a4
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=ae4a61947ae38840bddcde55af311b9d
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=af6293e04a241c009cdd2fcb36349eae
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=166a9eac389c82e0f4b9c7879d2421ac
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=59ce81d5d7c60f88189672cfe03a85d2
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=21fef34c878cde14e0f7ec93f2572a01
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=a4d6a4162ab02d3b49043c6f87636814
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=f63aa6451b947e880021ac0514c50ef7
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=eaefcb81983396e6457daf3a4a0f9f5b
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: MouseUpEventHandler1
+        Id: g=3573f37ad237da0e2d7061617dc27af7
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=41cebd924a5fbe245cc97e6e6c555d24
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":15,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=04644e82d50d8b0eb322f05f444071d7
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=de1348b42d130b5065ca50f6a2b48d67
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=8cac1440fe515292fac0006acb75d3b9
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"IdType":0,"Id":0,"Namespace":-1}
+              Children:
+              - Name: Kind
+                Id: g=2fe46cd246a4462c8757d13050a477e0
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+              - Name: DynamicLink
+                Id: g=28e9eac8d278d164e5b10fd208463e3c
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{MainBoilerAlias}@NodeId"
+            - Name: Method
+              Id: g=79220739443f74ba0cf254eca8c85b87
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Fill"
+            - Name: InputArguments
+              Id: g=6cdb213922c77de2cd583aa8d662a2ff
+              Type: BaseObjectType
+              Children:
+              - Name: SetPoint
+                Id: g=077b87624775efaf077307a566cd8988
+                Type: BaseDataVariableType
+                DataType: Double
+                Value: 0.0
+                Children:
+                - Name: ExpressionEvaluator1
+                  Id: g=7346d20668b6176bffae2cb1a3fc4096
+                  Type: ExpressionEvaluator
+                  Children:
+                  - Name: Source0
+                    Id: g=71ae18035fd807f9ba3f1d05d0d444f1
+                    Type: BaseDataVariableType
+                    DataType: BaseDataType
+                    ReferenceType: HasSource
+                    Children:
+                    - Name: DynamicLink
+                      Id: g=568764bfdee199615a6ebe5d6581803f
+                      Type: DynamicLink
+                      DataType: NodePath
+                      Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+        - Name: EventArguments
+          Id: g=d0778cae2f7de42c41f0fe9956736707
+          Type: MouseUpEvent
+          Children:
+          - Name: EventId
+            Id: g=6a80830d569839240a2c35beec7ff966
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=a11fa23774c781dcb8d22da977feba13
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=0a381e26b2fd192df00d842a95a88dab
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=8e3c32bf044281d794e34fd85bfd6251
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=7184412d892a345d28c063f321c78095
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=2516e1bea3a91844e3c7b4a47509b6ca
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=72504c694e9fef15664ac39beeff7ff0
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=77f62b6b266fc663a2a63b445ca499cb
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: Enabled
+        Id: g=853219466ff61d8a439868915ebc2577
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=ebe5288355f316543f55834d3cf012fc
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=1034d377ccf528613937c7ced5cba467
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=cdb9792692029f0a9f5a688e3c52fc17
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+          - Name: Source1
+            Id: g=5b7f498f2194bb8ceafb65a619e2dbea
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=a26e4661a5d2739e65ebfcfe95d48420
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{MainBoilerAlias}/FillLevelSensor/FillLevel"
+    - Name: EmptyingCycle
+      Id: g=1001d755985226282611f08d57014a3b
+      Type: Button
+      Children:
+      - Name: MouseClickEventHandler1
+        Id: g=312900a4efb08d948eaddacf24a91817
+        Type: EventHandler
+        Children:
+        - Name: ListenEventType
+          Id: g=f5f35affb63190b416d1dc42d217c709
+          Type: PropertyType
+          DataType: NodeId
+          Value: {"Id":16,"Namespace":16}
+        - Name: MethodsToCall
+          Id: g=364e17db3df2a0af939a669c52497f1f
+          Type: BaseObjectType
+          Children:
+          - Name: MethodContainer1
+            Id: g=4cd5982463582bf46e1c24aca2c4f851
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=7210e907917f614b69758641a1221c31
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=00c3c5ac8193092a71708028366d97a0
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=3f372f30d455fabd88885a373f809bd8
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=cc3540bd80fbe64d9bf54d62a03cf459
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=e7f86a813c6bcb54cc912a47dd87e130
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=928c017f090d09b4bd647ad1fa9c1321
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveInCmd@NodeId"
+              - Name: Value
+                Id: g=4ffcfca1f1a9bb74116e2b6fbf95d612
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: false
+              - Name: ArrayIndex
+                Id: g=557c17aea8602c8b9ad4c9a3495c2bbd
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+          - Name: MethodContainer2
+            Id: g=72a6a78ce49af6911a673179ce038342
+            Type: BaseObjectType
+            Children:
+            - Name: ObjectPointer
+              Id: g=15c14aa8f5377ca6dfddaee4d0a9c25d
+              Type: NodePointer
+              DataType: NodeId
+              Value: {"Id":22,"Namespace":14}
+              Children:
+              - Name: Kind
+                Id: g=5479f9f5ab09e70287d389dacab944ce
+                Type: PropertyType
+                DataType: NodeId
+                Value: {"Id":58}
+            - Name: Method
+              Id: g=7ca12656af267ac1d3812abd1e340842
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Set"
+            - Name: InputArguments
+              Id: g=ce9e19e03965a8803d6d2d74e7d8e724
+              Type: BaseObjectType
+              Children:
+              - Name: VariableToModify
+                Id: g=a1817004a3df2a402ea18d3610e09704
+                Type: BaseDataVariableType
+                DataType: VariablePointer
+                Value: {"IdType":0,"Id":0,"Namespace":-1}
+                Children:
+                - Name: DynamicLink
+                  Id: g=6e6baa3760950eaca29c1dbea4968f5e
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../TankAlias/ValveOutCmd@NodeId"
+              - Name: Value
+                Id: g=924c5f0e7568d0df259a1ab9e3c5fc1d
+                Type: BaseDataVariableType
+                DataType: Boolean
+                Value: true
+              - Name: ArrayIndex
+                Id: g=4c2e52817c4b86eca65bae471a9978eb
+                Type: BaseDataVariableType
+                DataType: UInt32
+                ValueRank: ScalarOrOneDimension
+                Value: 0
+        - Name: EventArguments
+          Id: g=21d2fbc329339a122826581562a93e8b
+          Type: MouseClickEvent
+          Children:
+          - Name: EventId
+            Id: g=66f5792d2708a0f4fc1441951a5ec573
+            Type: PropertyType
+            DataType: ByteString
+            Value: ""
+          - Name: EventType
+            Id: g=b2faf9696f63a8352bd88dfc2042460d
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceNode
+            Id: g=735bf46123e01c75ca87badb7dcc438d
+            Type: PropertyType
+            DataType: NodeId
+            Value: {"IdType":0,"Id":0,"Namespace":-1}
+          - Name: SourceName
+            Id: g=49c43dd52ea8de6d73f07a03dddee322
+            Type: PropertyType
+            DataType: String
+            Value: ""
+          - Name: Time
+            Id: g=42e89e171813088dfd9401d8c8bb52d9
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: ReceiveTime
+            Id: g=080fa7246102d2c3a0caa252e8058b97
+            Type: PropertyType
+            DataType: UtcTime
+            Value: "1601-01-01T00:00:00.0000000"
+          - Name: Message
+            Id: g=c19b6e50c889eec1f7b7255412e6068e
+            Type: PropertyType
+            DataType: LocalizedText
+            Value: {"NamespaceIndex":-1,"LocaleId":"","Text":""}
+          - Name: Severity
+            Id: g=4d603ac5e524cf22a49d13a9d77b6a66
+            Type: PropertyType
+            DataType: UInt16
+            Value: 0
+      - Name: Enabled
+        Id: g=14849818d75738b73b98209b94bcd0d2
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=a53f5491bdf73699ff6c8847d45221ce
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=fb6726959574ac27f468de57ec8c37dd
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=222a74b0f2f85323b8b740b960de4cf2
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{TankAlias}/Level"
+    - Name: Tank
+      Id: g=07baaeed54c47569bbd30d4afeaf2db0
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "T1001"
+    - Name: ValveInlet
+      Id: g=518c619011678ab333520ec653ac8893
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "EV101"
+    - Name: ValveOutlet
+      Id: g=63d0612941a689162dcc8c47bfcbaa40
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "EV201"
+    - Name: LeftMargin
+      Id: g=15a6a3cee005acef458f9ab6ded806f7
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 850.0
+    - Name: TopMargin
+      Id: g=9845bea7965419fa3dcf0266ad668228
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 390.0
 - Name: DataPage
   Id: g=1b0dc70d5d42c09a70acec1c917ca5d0
   Supertype: BasePage
